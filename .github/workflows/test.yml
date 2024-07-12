@@ -20,5 +20,5 @@ jobs:
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v3
 
-      - name: Execute tests
+      - name: Run tests
         run: ./gradlew test
