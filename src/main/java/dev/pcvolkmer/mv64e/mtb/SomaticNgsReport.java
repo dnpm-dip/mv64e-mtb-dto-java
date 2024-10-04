@@ -13,7 +13,7 @@ public class SomaticNgsReport {
     private List<Metadatum> metadata;
     private Double msi;
     private Patient patient;
-    private List<RNAFusion> rnaFusions;
+    private List<RnaFusion> rnaFusions;
     private List<RnaSeq> rnaSeqs;
     private Coding sequencingType;
     private List<Snv> simpleVariants;
@@ -62,9 +62,9 @@ public class SomaticNgsReport {
     public void setPatient(Patient value) { this.patient = value; }
 
     @JsonProperty("rnaFusions")
-    public List<RNAFusion> getRnaFusions() { return rnaFusions; }
+    public List<RnaFusion> getRnaFusions() { return rnaFusions; }
     @JsonProperty("rnaFusions")
-    public void setRnaFusions(List<RNAFusion> value) { this.rnaFusions = value; }
+    public void setRnaFusions(List<RnaFusion> value) { this.rnaFusions = value; }
 
     @JsonProperty("rnaSeqs")
     public List<RnaSeq> getRnaSeqs() { return rnaSeqs; }

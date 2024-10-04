@@ -2,7 +2,7 @@ package dev.pcvolkmer.mv64e.mtb;
 
 import com.fasterxml.jackson.annotation.*;
 
-public class RNAFusion {
+public class RnaFusion {
     private String cosmicId;
     private String effect;
     private RnaFusionFusionPartner3Prime fusionPartner3Prime;
