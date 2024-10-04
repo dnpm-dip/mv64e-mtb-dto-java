@@ -7,7 +7,6 @@ public class Mtb {
     private List<MtbCarePlan> carePlans;
     private List<ClaimResponse> claimResponses;
     private List<Claim> claims;
-    private Consent consent;
     private List<MtbDiagnosis> diagnoses;
     private List<PerformanceStatus> ecogStatus;
     private MtbEpisode episode;
@@ -37,11 +36,6 @@ public class Mtb {
     public List<Claim> getClaims() { return claims; }
     @JsonProperty("claims")
     public void setClaims(List<Claim> value) { this.claims = value; }
-
-    @JsonProperty("consent")
-    public Consent getConsent() { return consent; }
-    @JsonProperty("consent")
-    public void setConsent(Consent value) { this.consent = value; }
 
     @JsonProperty("diagnoses")
     public List<MtbDiagnosis> getDiagnoses() { return diagnoses; }
