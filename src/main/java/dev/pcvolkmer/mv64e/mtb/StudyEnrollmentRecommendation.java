@@ -2,13 +2,16 @@ package dev.pcvolkmer.mv64e.mtb;
 
 import com.fasterxml.jackson.annotation.*;
 import java.util.Date;
+import java.util.List;
 
 public class StudyEnrollmentRecommendation {
     private String id;
     private Date issuedOn;
-    private String nctNumber;
+    private Coding levelOfEvidence;
     private Patient patient;
-    private String reason;
+    private Reference reason;
+    private List<Study> studies;
+    private List<Reference> supportingVariants;
 
     @JsonProperty("id")
     public String getId() { return id; }
@@ -20,10 +23,10 @@ public class StudyEnrollmentRecommendation {
     @JsonProperty("issuedOn")
     public void setIssuedOn(Date value) { this.issuedOn = value; }
 
-    @JsonProperty("nctNumber")
-    public String getNctNumber() { return nctNumber; }
-    @JsonProperty("nctNumber")
-    public void setNctNumber(String value) { this.nctNumber = value; }
+    @JsonProperty("levelOfEvidence")
+    public Coding getLevelOfEvidence() { return levelOfEvidence; }
+    @JsonProperty("levelOfEvidence")
+    public void setLevelOfEvidence(Coding value) { this.levelOfEvidence = value; }
 
     @JsonProperty("patient")
     public Patient getPatient() { return patient; }
@@ -31,7 +34,17 @@ public class StudyEnrollmentRecommendation {
     public void setPatient(Patient value) { this.patient = value; }
 
     @JsonProperty("reason")
-    public String getReason() { return reason; }
+    public Reference getReason() { return reason; }
     @JsonProperty("reason")
-    public void setReason(String value) { this.reason = value; }
+    public void setReason(Reference value) { this.reason = value; }
+
+    @JsonProperty("studies")
+    public List<Study> getStudies() { return studies; }
+    @JsonProperty("studies")
+    public void setStudies(List<Study> value) { this.studies = value; }
+
+    @JsonProperty("supportingVariants")
+    public List<Reference> getSupportingVariants() { return supportingVariants; }
+    @JsonProperty("supportingVariants")
+    public void setSupportingVariants(List<Reference> value) { this.supportingVariants = value; }
 }

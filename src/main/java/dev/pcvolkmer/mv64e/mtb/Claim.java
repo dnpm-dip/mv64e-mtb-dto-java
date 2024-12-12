@@ -7,7 +7,8 @@ public class Claim {
     private String id;
     private Date issuedOn;
     private Patient patient;
-    private String therapy;
+    private Recommendation recommendation;
+    private Coding stage;
 
     @JsonProperty("id")
     public String getId() { return id; }
@@ -26,8 +27,13 @@ public class Claim {
     @JsonProperty("patient")
     public void setPatient(Patient value) { this.patient = value; }
 
-    @JsonProperty("therapy")
-    public String getTherapy() { return therapy; }
-    @JsonProperty("therapy")
-    public void setTherapy(String value) { this.therapy = value; }
+    @JsonProperty("recommendation")
+    public Recommendation getRecommendation() { return recommendation; }
+    @JsonProperty("recommendation")
+    public void setRecommendation(Recommendation value) { this.recommendation = value; }
+
+    @JsonProperty("stage")
+    public Coding getStage() { return stage; }
+    @JsonProperty("stage")
+    public void setStage(Coding value) { this.stage = value; }
 }

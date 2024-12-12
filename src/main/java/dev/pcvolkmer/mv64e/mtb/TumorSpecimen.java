@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.*;
 
 public class TumorSpecimen {
     private Collection collection;
-    private Coding icd10;
+    private Diagnosis diagnosis;
     private String id;
     private Patient patient;
     private CodingTumorSpecimenType type;
@@ -14,10 +14,10 @@ public class TumorSpecimen {
     @JsonProperty("collection")
     public void setCollection(Collection value) { this.collection = value; }
 
-    @JsonProperty("icd10")
-    public Coding getIcd10() { return icd10; }
-    @JsonProperty("icd10")
-    public void setIcd10(Coding value) { this.icd10 = value; }
+    @JsonProperty("diagnosis")
+    public Diagnosis getDiagnosis() { return diagnosis; }
+    @JsonProperty("diagnosis")
+    public void setDiagnosis(Diagnosis value) { this.diagnosis = value; }
 
     @JsonProperty("id")
     public String getId() { return id; }

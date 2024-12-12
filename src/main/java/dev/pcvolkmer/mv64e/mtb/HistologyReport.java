@@ -7,9 +7,8 @@ public class HistologyReport {
     private String id;
     private Date issuedOn;
     private Patient patient;
+    private HistologyReportResults results;
     private HistologyReportSpecimen specimen;
-    private TumorCellContent tumorCellContent;
-    private TumorMorphology tumorMorphology;
 
     @JsonProperty("id")
     public String getId() { return id; }
@@ -28,18 +27,13 @@ public class HistologyReport {
     @JsonProperty("patient")
     public void setPatient(Patient value) { this.patient = value; }
 
+    @JsonProperty("results")
+    public HistologyReportResults getResults() { return results; }
+    @JsonProperty("results")
+    public void setResults(HistologyReportResults value) { this.results = value; }
+
     @JsonProperty("specimen")
     public HistologyReportSpecimen getSpecimen() { return specimen; }
     @JsonProperty("specimen")
     public void setSpecimen(HistologyReportSpecimen value) { this.specimen = value; }
-
-    @JsonProperty("tumorCellContent")
-    public TumorCellContent getTumorCellContent() { return tumorCellContent; }
-    @JsonProperty("tumorCellContent")
-    public void setTumorCellContent(TumorCellContent value) { this.tumorCellContent = value; }
-
-    @JsonProperty("tumorMorphology")
-    public TumorMorphology getTumorMorphology() { return tumorMorphology; }
-    @JsonProperty("tumorMorphology")
-    public void setTumorMorphology(TumorMorphology value) { this.tumorMorphology = value; }
 }
