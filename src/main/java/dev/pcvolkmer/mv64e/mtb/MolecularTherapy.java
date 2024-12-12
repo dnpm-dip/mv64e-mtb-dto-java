@@ -4,10 +4,10 @@ import com.fasterxml.jackson.annotation.*;
 import java.util.List;
 
 public class MolecularTherapy {
-    private List<MtbMedicationTherapy> history;
+    private List<MTBMedicationTherapy> history;
 
     @JsonProperty("history")
-    public List<MtbMedicationTherapy> getHistory() { return history; }
+    public List<MTBMedicationTherapy> getHistory() { return history; }
     @JsonProperty("history")
-    public void setHistory(List<MtbMedicationTherapy> value) { this.history = value; }
+    public void setHistory(List<MTBMedicationTherapy> value) { this.history = value; }
 }

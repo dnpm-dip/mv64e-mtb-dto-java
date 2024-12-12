@@ -3,19 +3,19 @@ package dev.pcvolkmer.mv64e.mtb;
 import com.fasterxml.jackson.annotation.*;
 
 public class DnaFusionFusionPartner3Prime {
-    private Chromosome chromosome;
-    private PurpleGene gene;
+    private CodingChromosome chromosome;
+    private CodingGene gene;
     private double position;
 
     @JsonProperty("chromosome")
-    public Chromosome getChromosome() { return chromosome; }
+    public CodingChromosome getChromosome() { return chromosome; }
     @JsonProperty("chromosome")
-    public void setChromosome(Chromosome value) { this.chromosome = value; }
+    public void setChromosome(CodingChromosome value) { this.chromosome = value; }
 
     @JsonProperty("gene")
-    public PurpleGene getGene() { return gene; }
+    public CodingGene getGene() { return gene; }
     @JsonProperty("gene")
-    public void setGene(PurpleGene value) { this.gene = value; }
+    public void setGene(CodingGene value) { this.gene = value; }
 
     @JsonProperty("position")
     public double getPosition() { return position; }

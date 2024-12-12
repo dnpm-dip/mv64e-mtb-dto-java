@@ -3,14 +3,14 @@ package dev.pcvolkmer.mv64e.mtb;
 import com.fasterxml.jackson.annotation.*;
 
 public class ReferencePublication {
-    private ExtId extId;
+    private EXTId extId;
     private String type;
     private String uri;
 
     @JsonProperty("extId")
-    public ExtId getExtId() { return extId; }
+    public EXTId getExtId() { return extId; }
     @JsonProperty("extId")
-    public void setExtId(ExtId value) { this.extId = value; }
+    public void setExtId(EXTId value) { this.extId = value; }
 
     @JsonProperty("type")
     public String getType() { return type; }
