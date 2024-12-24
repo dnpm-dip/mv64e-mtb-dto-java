@@ -3,7 +3,7 @@ package dev.pcvolkmer.mv64e.mtb;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.*;
 
-public enum FluffyCode {
+public enum RecistCode {
     CR, MR, NA, NYA, PD, PR, SD;
 
     @JsonValue
@@ -21,7 +21,7 @@ public enum FluffyCode {
     }
 
     @JsonCreator
-    public static FluffyCode forValue(String value) throws IOException {
+    public static RecistCode forValue(String value) throws IOException {
         switch (value) {
             case "CR":
                 return CR;
@@ -38,6 +38,6 @@ public enum FluffyCode {
             case "SD":
                 return SD;
         }
-        throw new IOException("Cannot deserialize FluffyCode");
+        throw new IOException("Cannot deserialize RecistCode");
     }
 }

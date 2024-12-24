@@ -5,7 +5,7 @@ import java.util.Date;
 import java.util.List;
 
 public class MTBMedicationTherapy {
-    private String basedOn;
+    private Reference basedOn;
     private String diagnosis;
     private String id;
     private Reference indication;
@@ -19,9 +19,9 @@ public class MTBMedicationTherapy {
     private Long therapyLine;
 
     @JsonProperty("basedOn")
-    public String getBasedOn() { return basedOn; }
+    public Reference getBasedOn() { return basedOn; }
     @JsonProperty("basedOn")
-    public void setBasedOn(String value) { this.basedOn = value; }
+    public void setBasedOn(Reference value) { this.basedOn = value; }
 
     @JsonProperty("diagnosis")
     public String getDiagnosis() { return diagnosis; }

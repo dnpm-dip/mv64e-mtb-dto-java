@@ -14,6 +14,7 @@ public class Mtb {
     private List<OncoProdecure> guidelineProcedures;
     private List<MTBMedicationTherapy> guidelineTherapies;
     private List<HistologyReport> histologyReports;
+    private List<IHCReport> ihcReports;
     private List<MolecularTherapy> molecularTherapies;
     private List<SomaticNgsReport> ngsReports;
     private MtbPatient patient;
@@ -22,6 +23,7 @@ public class Mtb {
     private List<Response> responses;
     private List<TumorSpecimen> specimens;
     private List<StudyEnrollmentRecommendation> studyInclusionRequests;
+    private List<Therapy> therapies;
 
     @JsonProperty("carePlans")
     public List<MTBCarePlan> getCarePlans() { return carePlans; }
@@ -73,6 +75,11 @@ public class Mtb {
     @JsonProperty("histologyReports")
     public void setHistologyReports(List<HistologyReport> value) { this.histologyReports = value; }
 
+    @JsonProperty("ihcReports")
+    public List<IHCReport> getIhcReports() { return ihcReports; }
+    @JsonProperty("ihcReports")
+    public void setIhcReports(List<IHCReport> value) { this.ihcReports = value; }
+
     @JsonProperty("molecularTherapies")
     public List<MolecularTherapy> getMolecularTherapies() { return molecularTherapies; }
     @JsonProperty("molecularTherapies")
@@ -112,4 +119,9 @@ public class Mtb {
     public List<StudyEnrollmentRecommendation> getStudyInclusionRequests() { return studyInclusionRequests; }
     @JsonProperty("studyInclusionRequests")
     public void setStudyInclusionRequests(List<StudyEnrollmentRecommendation> value) { this.studyInclusionRequests = value; }
+
+    @JsonProperty("therapies")
+    public List<Therapy> getTherapies() { return therapies; }
+    @JsonProperty("therapies")
+    public void setTherapies(List<Therapy> value) { this.therapies = value; }
 }

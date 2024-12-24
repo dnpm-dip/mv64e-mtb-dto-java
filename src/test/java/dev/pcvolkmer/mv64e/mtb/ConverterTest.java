@@ -4,13 +4,14 @@ import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
 
-public class ConverterTest {
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+
+class ConverterTest {
 
     @Test
     void shouldDeserializeJsonString() throws IOException {
         var ressource = getClass().getClassLoader().getResource("mv64e-mtb-fake-patient.json");
-
-        Converter.fromJsonString(new String(ressource.openStream().readAllBytes()));
+        assertNotNull(Converter.fromJsonString(new String(ressource.openStream().readAllBytes())));
     }
 
 }
