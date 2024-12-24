@@ -2,16 +2,16 @@ package dev.pcvolkmer.mv64e.mtb;
 
 import com.fasterxml.jackson.annotation.*;
 
-public class CodingEcog {
-    private EcogCode code;
+public class CodingProteinExpressionTcScore {
+    private TcScoreCode code;
     private String display;
     private String system;
     private String version;
 
     @JsonProperty("code")
-    public EcogCode getCode() { return code; }
+    public TcScoreCode getCode() { return code; }
     @JsonProperty("code")
-    public void setCode(EcogCode value) { this.code = value; }
+    public void setCode(TcScoreCode value) { this.code = value; }
 
     @JsonProperty("display")
     public String getDisplay() { return display; }
