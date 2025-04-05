@@ -4,17 +4,17 @@ import com.fasterxml.jackson.annotation.*;
 import java.util.Date;
 
 public class ClaimResponse {
-    private ClaimResponseClaim claim;
+    private Reference claim;
     private String id;
     private Date issuedOn;
-    private Patient patient;
+    private Reference patient;
     private CodingClaimResponseStatus status;
     private CodingClaimResponseStatusReason statusReason;
 
     @JsonProperty("claim")
-    public ClaimResponseClaim getClaim() { return claim; }
+    public Reference getClaim() { return claim; }
     @JsonProperty("claim")
-    public void setClaim(ClaimResponseClaim value) { this.claim = value; }
+    public void setClaim(Reference value) { this.claim = value; }
 
     @JsonProperty("id")
     public String getId() { return id; }
@@ -29,9 +29,9 @@ public class ClaimResponse {
     public void setIssuedOn(Date value) { this.issuedOn = value; }
 
     @JsonProperty("patient")
-    public Patient getPatient() { return patient; }
+    public Reference getPatient() { return patient; }
     @JsonProperty("patient")
-    public void setPatient(Patient value) { this.patient = value; }
+    public void setPatient(Reference value) { this.patient = value; }
 
     @JsonProperty("status")
     public CodingClaimResponseStatus getStatus() { return status; }

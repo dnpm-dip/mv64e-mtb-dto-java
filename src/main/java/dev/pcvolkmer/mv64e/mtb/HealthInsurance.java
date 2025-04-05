@@ -3,22 +3,16 @@ package dev.pcvolkmer.mv64e.mtb;
 import com.fasterxml.jackson.annotation.*;
 
 public class HealthInsurance {
-    private String display;
-    private ExternalId extId;
-    private Type type;
+    private Reference reference;
+    private CodingHealthInsurance type;
 
-    @JsonProperty("display")
-    public String getDisplay() { return display; }
-    @JsonProperty("display")
-    public void setDisplay(String value) { this.display = value; }
-
-    @JsonProperty("extId")
-    public ExternalId getExtId() { return extId; }
-    @JsonProperty("extId")
-    public void setExtId(ExternalId value) { this.extId = value; }
+    @JsonProperty("reference")
+    public Reference getReference() { return reference; }
+    @JsonProperty("reference")
+    public void setReference(Reference value) { this.reference = value; }
 
     @JsonProperty("type")
-    public Type getType() { return type; }
+    public CodingHealthInsurance getType() { return type; }
     @JsonProperty("type")
-    public void setType(Type value) { this.type = value; }
+    public void setType(CodingHealthInsurance value) { this.type = value; }
 }

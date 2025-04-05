@@ -6,7 +6,7 @@ import java.util.Date;
 public class PerformanceStatus {
     private Date effectiveDate;
     private String id;
-    private Patient patient;
+    private Reference patient;
     private CodingEcog value;
 
     @JsonProperty("effectiveDate")
@@ -22,9 +22,9 @@ public class PerformanceStatus {
     public void setId(String value) { this.id = value; }
 
     @JsonProperty("patient")
-    public Patient getPatient() { return patient; }
+    public Reference getPatient() { return patient; }
     @JsonProperty("patient")
-    public void setPatient(Patient value) { this.patient = value; }
+    public void setPatient(Reference value) { this.patient = value; }
 
     @JsonProperty("value")
     public CodingEcog getValue() { return value; }

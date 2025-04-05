@@ -6,75 +6,75 @@ import java.util.List;
 
 public class MTBDiagnosis {
     private Coding code;
-    private Coding guidelineTreatmentStatus;
-    private List<String> histologyResults;
-    private Coding icdO3T;
+    private List<Coding> germlineCodes;
+    private Grading grading;
+    private CodingMtbDiagnosisGuidelineTreatmentStatus guidelineTreatmentStatus;
+    private List<Reference> histology;
     private String id;
-    private Patient patient;
+    private List<String> notes;
+    private Reference patient;
     private Date recordedOn;
-    private List<StageHistory> stageHistory;
+    private Staging staging;
     private Coding topography;
-    private CodingTumorGrade tumorGrade;
-    private Coding whoGrade;
-    private Coding whoGrading;
+    private Type type;
 
     @JsonProperty("code")
     public Coding getCode() { return code; }
     @JsonProperty("code")
     public void setCode(Coding value) { this.code = value; }
 
-    @JsonProperty("guidelineTreatmentStatus")
-    public Coding getGuidelineTreatmentStatus() { return guidelineTreatmentStatus; }
-    @JsonProperty("guidelineTreatmentStatus")
-    public void setGuidelineTreatmentStatus(Coding value) { this.guidelineTreatmentStatus = value; }
+    @JsonProperty("germlineCodes")
+    public List<Coding> getGermlineCodes() { return germlineCodes; }
+    @JsonProperty("germlineCodes")
+    public void setGermlineCodes(List<Coding> value) { this.germlineCodes = value; }
 
-    @JsonProperty("histologyResults")
-    public List<String> getHistologyResults() { return histologyResults; }
-    @JsonProperty("histologyResults")
-    public void setHistologyResults(List<String> value) { this.histologyResults = value; }
+    @JsonProperty("grading")
+    public Grading getGrading() { return grading; }
+    @JsonProperty("grading")
+    public void setGrading(Grading value) { this.grading = value; }
 
-    @JsonProperty("icdO3T")
-    public Coding getIcdO3T() { return icdO3T; }
-    @JsonProperty("icdO3T")
-    public void setIcdO3T(Coding value) { this.icdO3T = value; }
+    @JsonProperty("guidelineTreatmentStatus")
+    public CodingMtbDiagnosisGuidelineTreatmentStatus getGuidelineTreatmentStatus() { return guidelineTreatmentStatus; }
+    @JsonProperty("guidelineTreatmentStatus")
+    public void setGuidelineTreatmentStatus(CodingMtbDiagnosisGuidelineTreatmentStatus value) { this.guidelineTreatmentStatus = value; }
+
+    @JsonProperty("histology")
+    public List<Reference> getHistology() { return histology; }
+    @JsonProperty("histology")
+    public void setHistology(List<Reference> value) { this.histology = value; }
 
     @JsonProperty("id")
     public String getId() { return id; }
     @JsonProperty("id")
     public void setId(String value) { this.id = value; }
 
+    @JsonProperty("notes")
+    public List<String> getNotes() { return notes; }
+    @JsonProperty("notes")
+    public void setNotes(List<String> value) { this.notes = value; }
+
     @JsonProperty("patient")
-    public Patient getPatient() { return patient; }
+    public Reference getPatient() { return patient; }
     @JsonProperty("patient")
-    public void setPatient(Patient value) { this.patient = value; }
+    public void setPatient(Reference value) { this.patient = value; }
 
     @JsonProperty("recordedOn")
     public Date getRecordedOn() { return recordedOn; }
     @JsonProperty("recordedOn")
     public void setRecordedOn(Date value) { this.recordedOn = value; }
 
-    @JsonProperty("stageHistory")
-    public List<StageHistory> getStageHistory() { return stageHistory; }
-    @JsonProperty("stageHistory")
-    public void setStageHistory(List<StageHistory> value) { this.stageHistory = value; }
+    @JsonProperty("staging")
+    public Staging getStaging() { return staging; }
+    @JsonProperty("staging")
+    public void setStaging(Staging value) { this.staging = value; }
 
     @JsonProperty("topography")
     public Coding getTopography() { return topography; }
     @JsonProperty("topography")
     public void setTopography(Coding value) { this.topography = value; }
 
-    @JsonProperty("tumorGrade")
-    public CodingTumorGrade getTumorGrade() { return tumorGrade; }
-    @JsonProperty("tumorGrade")
-    public void setTumorGrade(CodingTumorGrade value) { this.tumorGrade = value; }
-
-    @JsonProperty("whoGrade")
-    public Coding getWhoGrade() { return whoGrade; }
-    @JsonProperty("whoGrade")
-    public void setWhoGrade(Coding value) { this.whoGrade = value; }
-
-    @JsonProperty("whoGrading")
-    public Coding getWhoGrading() { return whoGrading; }
-    @JsonProperty("whoGrading")
-    public void setWhoGrading(Coding value) { this.whoGrading = value; }
+    @JsonProperty("type")
+    public Type getType() { return type; }
+    @JsonProperty("type")
+    public void setType(Type value) { this.type = value; }
 }

@@ -3,21 +3,21 @@ package dev.pcvolkmer.mv64e.mtb;
 import com.fasterxml.jackson.annotation.*;
 
 public class RnaFusionFusionPartner5Prime {
-    private String exon;
-    private CodingGene gene;
+    private String exonId;
+    private Coding gene;
     private double position;
     private RNAFusionStrand strand;
-    private String transcriptId;
+    private TranscriptId transcriptId;
 
-    @JsonProperty("exon")
-    public String getExon() { return exon; }
-    @JsonProperty("exon")
-    public void setExon(String value) { this.exon = value; }
+    @JsonProperty("exonId")
+    public String getExonId() { return exonId; }
+    @JsonProperty("exonId")
+    public void setExonId(String value) { this.exonId = value; }
 
     @JsonProperty("gene")
-    public CodingGene getGene() { return gene; }
+    public Coding getGene() { return gene; }
     @JsonProperty("gene")
-    public void setGene(CodingGene value) { this.gene = value; }
+    public void setGene(Coding value) { this.gene = value; }
 
     @JsonProperty("position")
     public double getPosition() { return position; }
@@ -30,7 +30,7 @@ public class RnaFusionFusionPartner5Prime {
     public void setStrand(RNAFusionStrand value) { this.strand = value; }
 
     @JsonProperty("transcriptId")
-    public String getTranscriptId() { return transcriptId; }
+    public TranscriptId getTranscriptId() { return transcriptId; }
     @JsonProperty("transcriptId")
-    public void setTranscriptId(String value) { this.transcriptId = value; }
+    public void setTranscriptId(TranscriptId value) { this.transcriptId = value; }
 }

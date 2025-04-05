@@ -3,15 +3,15 @@ package dev.pcvolkmer.mv64e.mtb;
 import com.fasterxml.jackson.annotation.*;
 
 public class CodingEcog {
-    private EcogCode code;
+    private CodingEcogCode code;
     private String display;
     private String system;
     private String version;
 
     @JsonProperty("code")
-    public EcogCode getCode() { return code; }
+    public CodingEcogCode getCode() { return code; }
     @JsonProperty("code")
-    public void setCode(EcogCode value) { this.code = value; }
+    public void setCode(CodingEcogCode value) { this.code = value; }
 
     @JsonProperty("display")
     public String getDisplay() { return display; }

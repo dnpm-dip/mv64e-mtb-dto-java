@@ -4,10 +4,10 @@ import com.fasterxml.jackson.annotation.*;
 
 public class TumorSpecimen {
     private Collection collection;
-    private Diagnosis diagnosis;
+    private Reference diagnosis;
     private String id;
-    private Patient patient;
-    private CodingTumorSpecimenType type;
+    private Reference patient;
+    private CodingTumorSpecimen type;
 
     @JsonProperty("collection")
     public Collection getCollection() { return collection; }
@@ -15,9 +15,9 @@ public class TumorSpecimen {
     public void setCollection(Collection value) { this.collection = value; }
 
     @JsonProperty("diagnosis")
-    public Diagnosis getDiagnosis() { return diagnosis; }
+    public Reference getDiagnosis() { return diagnosis; }
     @JsonProperty("diagnosis")
-    public void setDiagnosis(Diagnosis value) { this.diagnosis = value; }
+    public void setDiagnosis(Reference value) { this.diagnosis = value; }
 
     @JsonProperty("id")
     public String getId() { return id; }
@@ -25,12 +25,12 @@ public class TumorSpecimen {
     public void setId(String value) { this.id = value; }
 
     @JsonProperty("patient")
-    public Patient getPatient() { return patient; }
+    public Reference getPatient() { return patient; }
     @JsonProperty("patient")
-    public void setPatient(Patient value) { this.patient = value; }
+    public void setPatient(Reference value) { this.patient = value; }
 
     @JsonProperty("type")
-    public CodingTumorSpecimenType getType() { return type; }
+    public CodingTumorSpecimen getType() { return type; }
     @JsonProperty("type")
-    public void setType(CodingTumorSpecimenType value) { this.type = value; }
+    public void setType(CodingTumorSpecimen value) { this.type = value; }
 }

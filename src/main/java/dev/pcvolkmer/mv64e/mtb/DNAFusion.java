@@ -1,12 +1,21 @@
 package dev.pcvolkmer.mv64e.mtb;
 
 import com.fasterxml.jackson.annotation.*;
+import java.util.List;
 
 public class DNAFusion {
+    private List<VariantExternalId> externalIds;
     private DnaFusionFusionPartner3Prime fusionPartner3Prime;
     private DnaFusionFusionPartner5Prime fusionPartner5Prime;
     private String id;
+    private List<CodingBaseVariantLocalization> localization;
+    private Reference patient;
     private long reportedNumReads;
+
+    @JsonProperty("externalIds")
+    public List<VariantExternalId> getExternalIds() { return externalIds; }
+    @JsonProperty("externalIds")
+    public void setExternalIds(List<VariantExternalId> value) { this.externalIds = value; }
 
     @JsonProperty("fusionPartner3prime")
     public DnaFusionFusionPartner3Prime getFusionPartner3Prime() { return fusionPartner3Prime; }
@@ -22,6 +31,16 @@ public class DNAFusion {
     public String getId() { return id; }
     @JsonProperty("id")
     public void setId(String value) { this.id = value; }
+
+    @JsonProperty("localization")
+    public List<CodingBaseVariantLocalization> getLocalization() { return localization; }
+    @JsonProperty("localization")
+    public void setLocalization(List<CodingBaseVariantLocalization> value) { this.localization = value; }
+
+    @JsonProperty("patient")
+    public Reference getPatient() { return patient; }
+    @JsonProperty("patient")
+    public void setPatient(Reference value) { this.patient = value; }
 
     @JsonProperty("reportedNumReads")
     public long getReportedNumReads() { return reportedNumReads; }

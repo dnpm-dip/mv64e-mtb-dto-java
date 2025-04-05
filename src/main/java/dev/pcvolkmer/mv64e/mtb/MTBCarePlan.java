@@ -5,41 +5,39 @@ import java.util.Date;
 import java.util.List;
 
 public class MTBCarePlan {
-    private String diagnosis;
     private GeneticCounselingRecommendation geneticCounselingRecommendation;
+    private List<HistologyReevaluationRequest> histologyReevaluationRequests;
     private String id;
-    private Reference indication;
     private Date issuedOn;
     private List<MTBMedicationRecommendation> medicationRecommendations;
-    private NoTargetFinding noTargetFinding;
-    private String notes;
-    private Patient patient;
-    private CodingCarePlanStatusReason statusReason;
-    private List<StudyEnrollmentRecommendation> studyEnrollmentRecommendations;
-
-    @JsonProperty("diagnosis")
-    public String getDiagnosis() { return diagnosis; }
-    @JsonProperty("diagnosis")
-    public void setDiagnosis(String value) { this.diagnosis = value; }
+    private List<String> notes;
+    private Reference patient;
+    private List<ProcedureRecommendation> procedureRecommendations;
+    private Reference reason;
+    private List<RebiopsyRequest> rebiopsyRequests;
+    private CodingMtbCarePlanStatusReason statusReason;
+    private List<MTBStudyEnrollmentRecommendation> studyEnrollmentRecommendations;
 
     @JsonProperty("geneticCounselingRecommendation")
     public GeneticCounselingRecommendation getGeneticCounselingRecommendation() { return geneticCounselingRecommendation; }
     @JsonProperty("geneticCounselingRecommendation")
     public void setGeneticCounselingRecommendation(GeneticCounselingRecommendation value) { this.geneticCounselingRecommendation = value; }
 
+    @JsonProperty("histologyReevaluationRequests")
+    public List<HistologyReevaluationRequest> getHistologyReevaluationRequests() { return histologyReevaluationRequests; }
+    @JsonProperty("histologyReevaluationRequests")
+    public void setHistologyReevaluationRequests(List<HistologyReevaluationRequest> value) { this.histologyReevaluationRequests = value; }
+
     @JsonProperty("id")
     public String getId() { return id; }
     @JsonProperty("id")
     public void setId(String value) { this.id = value; }
 
-    @JsonProperty("indication")
-    public Reference getIndication() { return indication; }
-    @JsonProperty("indication")
-    public void setIndication(Reference value) { this.indication = value; }
-
     @JsonProperty("issuedOn")
+    @JsonFormat(pattern = "yyyy-MM-dd")
     public Date getIssuedOn() { return issuedOn; }
     @JsonProperty("issuedOn")
+    @JsonFormat(pattern = "yyyy-MM-dd")
     public void setIssuedOn(Date value) { this.issuedOn = value; }
 
     @JsonProperty("medicationRecommendations")
@@ -47,28 +45,38 @@ public class MTBCarePlan {
     @JsonProperty("medicationRecommendations")
     public void setMedicationRecommendations(List<MTBMedicationRecommendation> value) { this.medicationRecommendations = value; }
 
-    @JsonProperty("noTargetFinding")
-    public NoTargetFinding getNoTargetFinding() { return noTargetFinding; }
-    @JsonProperty("noTargetFinding")
-    public void setNoTargetFinding(NoTargetFinding value) { this.noTargetFinding = value; }
-
     @JsonProperty("notes")
-    public String getNotes() { return notes; }
+    public List<String> getNotes() { return notes; }
     @JsonProperty("notes")
-    public void setNotes(String value) { this.notes = value; }
+    public void setNotes(List<String> value) { this.notes = value; }
 
     @JsonProperty("patient")
-    public Patient getPatient() { return patient; }
+    public Reference getPatient() { return patient; }
     @JsonProperty("patient")
-    public void setPatient(Patient value) { this.patient = value; }
+    public void setPatient(Reference value) { this.patient = value; }
+
+    @JsonProperty("procedureRecommendations")
+    public List<ProcedureRecommendation> getProcedureRecommendations() { return procedureRecommendations; }
+    @JsonProperty("procedureRecommendations")
+    public void setProcedureRecommendations(List<ProcedureRecommendation> value) { this.procedureRecommendations = value; }
+
+    @JsonProperty("reason")
+    public Reference getReason() { return reason; }
+    @JsonProperty("reason")
+    public void setReason(Reference value) { this.reason = value; }
+
+    @JsonProperty("rebiopsyRequests")
+    public List<RebiopsyRequest> getRebiopsyRequests() { return rebiopsyRequests; }
+    @JsonProperty("rebiopsyRequests")
+    public void setRebiopsyRequests(List<RebiopsyRequest> value) { this.rebiopsyRequests = value; }
 
     @JsonProperty("statusReason")
-    public CodingCarePlanStatusReason getStatusReason() { return statusReason; }
+    public CodingMtbCarePlanStatusReason getStatusReason() { return statusReason; }
     @JsonProperty("statusReason")
-    public void setStatusReason(CodingCarePlanStatusReason value) { this.statusReason = value; }
+    public void setStatusReason(CodingMtbCarePlanStatusReason value) { this.statusReason = value; }
 
     @JsonProperty("studyEnrollmentRecommendations")
-    public List<StudyEnrollmentRecommendation> getStudyEnrollmentRecommendations() { return studyEnrollmentRecommendations; }
+    public List<MTBStudyEnrollmentRecommendation> getStudyEnrollmentRecommendations() { return studyEnrollmentRecommendations; }
     @JsonProperty("studyEnrollmentRecommendations")
-    public void setStudyEnrollmentRecommendations(List<StudyEnrollmentRecommendation> value) { this.studyEnrollmentRecommendations = value; }
+    public void setStudyEnrollmentRecommendations(List<MTBStudyEnrollmentRecommendation> value) { this.studyEnrollmentRecommendations = value; }
 }

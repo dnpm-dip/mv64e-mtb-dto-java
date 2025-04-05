@@ -3,14 +3,15 @@ package dev.pcvolkmer.mv64e.mtb;
 import com.fasterxml.jackson.annotation.*;
 
 public class CodingTherapyStatus {
-    private TherapyStatus code;
+    private CodingTherapyStatusCode code;
     private String display;
     private String system;
+    private String version;
 
     @JsonProperty("code")
-    public TherapyStatus getCode() { return code; }
+    public CodingTherapyStatusCode getCode() { return code; }
     @JsonProperty("code")
-    public void setCode(TherapyStatus value) { this.code = value; }
+    public void setCode(CodingTherapyStatusCode value) { this.code = value; }
 
     @JsonProperty("display")
     public String getDisplay() { return display; }
@@ -21,4 +22,9 @@ public class CodingTherapyStatus {
     public String getSystem() { return system; }
     @JsonProperty("system")
     public void setSystem(String value) { this.system = value; }
+
+    @JsonProperty("version")
+    public String getVersion() { return version; }
+    @JsonProperty("version")
+    public void setVersion(String value) { this.version = value; }
 }

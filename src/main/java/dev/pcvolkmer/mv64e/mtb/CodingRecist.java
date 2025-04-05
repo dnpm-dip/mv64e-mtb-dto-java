@@ -3,15 +3,15 @@ package dev.pcvolkmer.mv64e.mtb;
 import com.fasterxml.jackson.annotation.*;
 
 public class CodingRecist {
-    private RecistCode code;
+    private CodingRecistCode code;
     private String display;
     private String system;
     private String version;
 
     @JsonProperty("code")
-    public RecistCode getCode() { return code; }
+    public CodingRecistCode getCode() { return code; }
     @JsonProperty("code")
-    public void setCode(RecistCode value) { this.code = value; }
+    public void setCode(CodingRecistCode value) { this.code = value; }
 
     @JsonProperty("display")
     public String getDisplay() { return display; }

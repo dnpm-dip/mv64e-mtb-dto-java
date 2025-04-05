@@ -4,14 +4,14 @@ import java.io.IOException;
 import com.fasterxml.jackson.annotation.*;
 
 public enum StageCode {
-    LOCAL, METASTASIZED, TUMOR_FREE, UNKNOWN;
+    FOLLOW_UP_CLAIM, INITIAL_CLAIM, REVOCATION, UNKNOWN;
 
     @JsonValue
     public String toValue() {
         switch (this) {
-            case LOCAL: return "local";
-            case METASTASIZED: return "metastasized";
-            case TUMOR_FREE: return "tumor-free";
+            case FOLLOW_UP_CLAIM: return "follow-up-claim";
+            case INITIAL_CLAIM: return "initial-claim";
+            case REVOCATION: return "revocation";
             case UNKNOWN: return "unknown";
         }
         return null;
@@ -19,16 +19,10 @@ public enum StageCode {
 
     @JsonCreator
     public static StageCode forValue(String value) throws IOException {
-        switch (value) {
-            case "local":
-                return LOCAL;
-            case "metastasized":
-                return METASTASIZED;
-            case "tumor-free":
-                return TUMOR_FREE;
-            case "unknown":
-                return UNKNOWN;
-        }
+        if (value.equals("follow-up-claim")) return FOLLOW_UP_CLAIM;
+        if (value.equals("initial-claim")) return INITIAL_CLAIM;
+        if (value.equals("revocation")) return REVOCATION;
+        if (value.equals("unknown")) return UNKNOWN;
         throw new IOException("Cannot deserialize StageCode");
     }
 }

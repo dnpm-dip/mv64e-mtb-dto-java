@@ -5,51 +5,45 @@ import java.util.Date;
 import java.util.List;
 
 public class IHCReport {
-    private ExternalId blockId;
-    private Date date;
+    private List<String> blockIds;
     private String id;
-    private ExternalId journalId;
-    private List<MSIMmrResult> msiMmrResults;
+    private Date issuedOn;
+    private String journalId;
     private Reference patient;
-    private List<ProteinExpressionResult> proteinExpressionResults;
+    private IhcReportResults results;
     private Reference specimen;
 
-    @JsonProperty("blockId")
-    public ExternalId getBlockId() { return blockId; }
-    @JsonProperty("blockId")
-    public void setBlockId(ExternalId value) { this.blockId = value; }
-
-    @JsonProperty("date")
-    @JsonFormat(pattern = "yyyy-MM-dd")
-    public Date getDate() { return date; }
-    @JsonProperty("date")
-    @JsonFormat(pattern = "yyyy-MM-dd")
-    public void setDate(Date value) { this.date = value; }
+    @JsonProperty("blockIds")
+    public List<String> getBlockIds() { return blockIds; }
+    @JsonProperty("blockIds")
+    public void setBlockIds(List<String> value) { this.blockIds = value; }
 
     @JsonProperty("id")
     public String getId() { return id; }
     @JsonProperty("id")
     public void setId(String value) { this.id = value; }
 
-    @JsonProperty("journalId")
-    public ExternalId getJournalId() { return journalId; }
-    @JsonProperty("journalId")
-    public void setJournalId(ExternalId value) { this.journalId = value; }
+    @JsonProperty("issuedOn")
+    @JsonFormat(pattern = "yyyy-MM-dd")
+    public Date getIssuedOn() { return issuedOn; }
+    @JsonProperty("issuedOn")
+    @JsonFormat(pattern = "yyyy-MM-dd")
+    public void setIssuedOn(Date value) { this.issuedOn = value; }
 
-    @JsonProperty("msiMmrResults")
-    public List<MSIMmrResult> getMsiMmrResults() { return msiMmrResults; }
-    @JsonProperty("msiMmrResults")
-    public void setMsiMmrResults(List<MSIMmrResult> value) { this.msiMmrResults = value; }
+    @JsonProperty("journalId")
+    public String getJournalId() { return journalId; }
+    @JsonProperty("journalId")
+    public void setJournalId(String value) { this.journalId = value; }
 
     @JsonProperty("patient")
     public Reference getPatient() { return patient; }
     @JsonProperty("patient")
     public void setPatient(Reference value) { this.patient = value; }
 
-    @JsonProperty("proteinExpressionResults")
-    public List<ProteinExpressionResult> getProteinExpressionResults() { return proteinExpressionResults; }
-    @JsonProperty("proteinExpressionResults")
-    public void setProteinExpressionResults(List<ProteinExpressionResult> value) { this.proteinExpressionResults = value; }
+    @JsonProperty("results")
+    public IhcReportResults getResults() { return results; }
+    @JsonProperty("results")
+    public void setResults(IhcReportResults value) { this.results = value; }
 
     @JsonProperty("specimen")
     public Reference getSpecimen() { return specimen; }

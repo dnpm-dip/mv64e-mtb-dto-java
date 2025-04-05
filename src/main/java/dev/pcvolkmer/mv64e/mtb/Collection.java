@@ -9,10 +9,8 @@ public class Collection {
     private CodingTumorSpecimenCollectionMethod method;
 
     @JsonProperty("date")
-    @JsonFormat(pattern = "yyyy-MM-dd")
     public Date getDate() { return date; }
     @JsonProperty("date")
-    @JsonFormat(pattern = "yyyy-MM-dd")
     public void setDate(Date value) { this.date = value; }
 
     @JsonProperty("localization")

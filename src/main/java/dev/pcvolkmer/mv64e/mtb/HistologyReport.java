@@ -6,9 +6,9 @@ import java.util.Date;
 public class HistologyReport {
     private String id;
     private Date issuedOn;
-    private Patient patient;
+    private Reference patient;
     private HistologyReportResults results;
-    private HistologyReportSpecimen specimen;
+    private Reference specimen;
 
     @JsonProperty("id")
     public String getId() { return id; }
@@ -23,9 +23,9 @@ public class HistologyReport {
     public void setIssuedOn(Date value) { this.issuedOn = value; }
 
     @JsonProperty("patient")
-    public Patient getPatient() { return patient; }
+    public Reference getPatient() { return patient; }
     @JsonProperty("patient")
-    public void setPatient(Patient value) { this.patient = value; }
+    public void setPatient(Reference value) { this.patient = value; }
 
     @JsonProperty("results")
     public HistologyReportResults getResults() { return results; }
@@ -33,7 +33,7 @@ public class HistologyReport {
     public void setResults(HistologyReportResults value) { this.results = value; }
 
     @JsonProperty("specimen")
-    public HistologyReportSpecimen getSpecimen() { return specimen; }
+    public Reference getSpecimen() { return specimen; }
     @JsonProperty("specimen")
-    public void setSpecimen(HistologyReportSpecimen value) { this.specimen = value; }
+    public void setSpecimen(Reference value) { this.specimen = value; }
 }

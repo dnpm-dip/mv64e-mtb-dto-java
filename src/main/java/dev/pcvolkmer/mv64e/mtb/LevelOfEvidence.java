@@ -6,7 +6,7 @@ import java.util.List;
 public class LevelOfEvidence {
     private List<CodingLevelOfEvidenceAddendum> addendums;
     private CodingLevelOfEvidenceGrading grading;
-    private List<ReferencePublication> publications;
+    private List<PublicationReference> publications;
 
     @JsonProperty("addendums")
     public List<CodingLevelOfEvidenceAddendum> getAddendums() { return addendums; }
@@ -19,7 +19,7 @@ public class LevelOfEvidence {
     public void setGrading(CodingLevelOfEvidenceGrading value) { this.grading = value; }
 
     @JsonProperty("publications")
-    public List<ReferencePublication> getPublications() { return publications; }
+    public List<PublicationReference> getPublications() { return publications; }
     @JsonProperty("publications")
-    public void setPublications(List<ReferencePublication> value) { this.publications = value; }
+    public void setPublications(List<PublicationReference> value) { this.publications = value; }
 }

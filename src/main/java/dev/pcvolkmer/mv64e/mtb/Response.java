@@ -6,8 +6,9 @@ import java.util.Date;
 public class Response {
     private Date effectiveDate;
     private String id;
-    private Patient patient;
-    private ResponseTherapy therapy;
+    private CodingResponseMethod method;
+    private Reference patient;
+    private Reference therapy;
     private CodingRecist value;
 
     @JsonProperty("effectiveDate")
@@ -22,15 +23,20 @@ public class Response {
     @JsonProperty("id")
     public void setId(String value) { this.id = value; }
 
+    @JsonProperty("method")
+    public CodingResponseMethod getMethod() { return method; }
+    @JsonProperty("method")
+    public void setMethod(CodingResponseMethod value) { this.method = value; }
+
     @JsonProperty("patient")
-    public Patient getPatient() { return patient; }
+    public Reference getPatient() { return patient; }
     @JsonProperty("patient")
-    public void setPatient(Patient value) { this.patient = value; }
+    public void setPatient(Reference value) { this.patient = value; }
 
     @JsonProperty("therapy")
-    public ResponseTherapy getTherapy() { return therapy; }
+    public Reference getTherapy() { return therapy; }
     @JsonProperty("therapy")
-    public void setTherapy(ResponseTherapy value) { this.therapy = value; }
+    public void setTherapy(Reference value) { this.therapy = value; }
 
     @JsonProperty("value")
     public CodingRecist getValue() { return value; }

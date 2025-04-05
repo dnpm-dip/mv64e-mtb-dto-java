@@ -1,22 +1,13 @@
 package dev.pcvolkmer.mv64e.mtb;
 
-import java.io.IOException;
 import com.fasterxml.jackson.annotation.*;
+import java.util.List;
 
-public enum Type {
-    ORGANIZATION;
+public class Type {
+    private List<History> history;
 
-    @JsonValue
-    public String toValue() {
-        switch (this) {
-            case ORGANIZATION: return "Organization";
-        }
-        return null;
-    }
-
-    @JsonCreator
-    public static Type forValue(String value) throws IOException {
-        if (value.equals("Organization")) return ORGANIZATION;
-        throw new IOException("Cannot deserialize Type");
-    }
+    @JsonProperty("history")
+    public List<History> getHistory() { return history; }
+    @JsonProperty("history")
+    public void setHistory(List<History> value) { this.history = value; }
 }

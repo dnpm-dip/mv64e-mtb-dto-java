@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.*;
 public class HRDScore {
     private Components components;
     private String id;
-    private Coding interpretation;
+    private CodingHrdScoreInterpretation interpretation;
     private Reference patient;
     private Reference specimen;
     private double value;
@@ -21,9 +21,9 @@ public class HRDScore {
     public void setId(String value) { this.id = value; }
 
     @JsonProperty("interpretation")
-    public Coding getInterpretation() { return interpretation; }
+    public CodingHrdScoreInterpretation getInterpretation() { return interpretation; }
     @JsonProperty("interpretation")
-    public void setInterpretation(Coding value) { this.interpretation = value; }
+    public void setInterpretation(CodingHrdScoreInterpretation value) { this.interpretation = value; }
 
     @JsonProperty("patient")
     public Reference getPatient() { return patient; }

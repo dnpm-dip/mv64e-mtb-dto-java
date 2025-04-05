@@ -3,15 +3,15 @@ package dev.pcvolkmer.mv64e.mtb;
 import com.fasterxml.jackson.annotation.*;
 
 public class CodingLevelOfEvidenceGrading {
-    private GradingCode code;
+    private LevelOfEvidenceCode code;
     private String display;
     private String system;
     private String version;
 
     @JsonProperty("code")
-    public GradingCode getCode() { return code; }
+    public LevelOfEvidenceCode getCode() { return code; }
     @JsonProperty("code")
-    public void setCode(GradingCode value) { this.code = value; }
+    public void setCode(LevelOfEvidenceCode value) { this.code = value; }
 
     @JsonProperty("display")
     public String getDisplay() { return display; }

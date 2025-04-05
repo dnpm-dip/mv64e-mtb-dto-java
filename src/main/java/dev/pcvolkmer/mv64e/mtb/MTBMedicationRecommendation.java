@@ -5,29 +5,32 @@ import java.util.Date;
 import java.util.List;
 
 public class MTBMedicationRecommendation {
+    private CodingMtbMedicationRecommendationCategory category;
     private String id;
-    private Reference indication;
     private Date issuedOn;
     private LevelOfEvidence levelOfEvidence;
-    private List<Coding> medication;
-    private String ngsReport;
-    private Patient patient;
-    private CodingTherapyRecommendationPriority priority;
-    private List<Reference> supportingVariants;
+    private List<CodingAtcUnregisteredMedication> medication;
+    private Reference patient;
+    private CodingRecommendationPriority priority;
+    private Reference reason;
+    private List<GeneAlterationReference> supportingVariants;
+    private CodingMtbMedicationRecommendationUseType useType;
+
+    @JsonProperty("category")
+    public CodingMtbMedicationRecommendationCategory getCategory() { return category; }
+    @JsonProperty("category")
+    public void setCategory(CodingMtbMedicationRecommendationCategory value) { this.category = value; }
 
     @JsonProperty("id")
     public String getId() { return id; }
     @JsonProperty("id")
     public void setId(String value) { this.id = value; }
 
-    @JsonProperty("indication")
-    public Reference getIndication() { return indication; }
-    @JsonProperty("indication")
-    public void setIndication(Reference value) { this.indication = value; }
-
     @JsonProperty("issuedOn")
+    @JsonFormat(pattern = "yyyy-MM-dd")
     public Date getIssuedOn() { return issuedOn; }
     @JsonProperty("issuedOn")
+    @JsonFormat(pattern = "yyyy-MM-dd")
     public void setIssuedOn(Date value) { this.issuedOn = value; }
 
     @JsonProperty("levelOfEvidence")
@@ -36,27 +39,32 @@ public class MTBMedicationRecommendation {
     public void setLevelOfEvidence(LevelOfEvidence value) { this.levelOfEvidence = value; }
 
     @JsonProperty("medication")
-    public List<Coding> getMedication() { return medication; }
+    public List<CodingAtcUnregisteredMedication> getMedication() { return medication; }
     @JsonProperty("medication")
-    public void setMedication(List<Coding> value) { this.medication = value; }
-
-    @JsonProperty("ngsReport")
-    public String getNgsReport() { return ngsReport; }
-    @JsonProperty("ngsReport")
-    public void setNgsReport(String value) { this.ngsReport = value; }
+    public void setMedication(List<CodingAtcUnregisteredMedication> value) { this.medication = value; }
 
     @JsonProperty("patient")
-    public Patient getPatient() { return patient; }
+    public Reference getPatient() { return patient; }
     @JsonProperty("patient")
-    public void setPatient(Patient value) { this.patient = value; }
+    public void setPatient(Reference value) { this.patient = value; }
 
     @JsonProperty("priority")
-    public CodingTherapyRecommendationPriority getPriority() { return priority; }
+    public CodingRecommendationPriority getPriority() { return priority; }
     @JsonProperty("priority")
-    public void setPriority(CodingTherapyRecommendationPriority value) { this.priority = value; }
+    public void setPriority(CodingRecommendationPriority value) { this.priority = value; }
+
+    @JsonProperty("reason")
+    public Reference getReason() { return reason; }
+    @JsonProperty("reason")
+    public void setReason(Reference value) { this.reason = value; }
 
     @JsonProperty("supportingVariants")
-    public List<Reference> getSupportingVariants() { return supportingVariants; }
+    public List<GeneAlterationReference> getSupportingVariants() { return supportingVariants; }
     @JsonProperty("supportingVariants")
-    public void setSupportingVariants(List<Reference> value) { this.supportingVariants = value; }
+    public void setSupportingVariants(List<GeneAlterationReference> value) { this.supportingVariants = value; }
+
+    @JsonProperty("useType")
+    public CodingMtbMedicationRecommendationUseType getUseType() { return useType; }
+    @JsonProperty("useType")
+    public void setUseType(CodingMtbMedicationRecommendationUseType value) { this.useType = value; }
 }
