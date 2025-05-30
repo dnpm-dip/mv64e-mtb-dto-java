@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.*;
 
 public class TumorMorphology {
     private String id;
-    private String notes;
+    private String note;
     private Reference patient;
     private Reference specimen;
     private Coding value;
@@ -14,10 +14,10 @@ public class TumorMorphology {
     @JsonProperty("id")
     public void setId(String value) { this.id = value; }
 
-    @JsonProperty("notes")
-    public String getNotes() { return notes; }
-    @JsonProperty("notes")
-    public void setNotes(String value) { this.notes = value; }
+    @JsonProperty("note")
+    public String getNote() { return note; }
+    @JsonProperty("note")
+    public void setNote(String value) { this.note = value; }
 
     @JsonProperty("patient")
     public Reference getPatient() { return patient; }

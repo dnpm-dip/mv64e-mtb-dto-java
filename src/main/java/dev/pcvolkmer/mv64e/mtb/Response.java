@@ -6,10 +6,10 @@ import java.util.Date;
 public class Response {
     private Date effectiveDate;
     private String id;
-    private CodingResponseMethod method;
+    private ResponseMethodCoding method;
     private Reference patient;
     private Reference therapy;
-    private CodingRecist value;
+    private RecistCoding value;
 
     @JsonProperty("effectiveDate")
     @JsonFormat(pattern = "yyyy-MM-dd")
@@ -24,9 +24,9 @@ public class Response {
     public void setId(String value) { this.id = value; }
 
     @JsonProperty("method")
-    public CodingResponseMethod getMethod() { return method; }
+    public ResponseMethodCoding getMethod() { return method; }
     @JsonProperty("method")
-    public void setMethod(CodingResponseMethod value) { this.method = value; }
+    public void setMethod(ResponseMethodCoding value) { this.method = value; }
 
     @JsonProperty("patient")
     public Reference getPatient() { return patient; }
@@ -39,7 +39,7 @@ public class Response {
     public void setTherapy(Reference value) { this.therapy = value; }
 
     @JsonProperty("value")
-    public CodingRecist getValue() { return value; }
+    public RecistCoding getValue() { return value; }
     @JsonProperty("value")
-    public void setValue(CodingRecist value) { this.value = value; }
+    public void setValue(RecistCoding value) { this.value = value; }
 }

@@ -11,7 +11,7 @@ public class PriorDiagnosticReport {
     private Reference performer;
     private List<String> results;
     private Reference specimen;
-    private CodingMolecularDiagnosticReport type;
+    private MolecularDiagnosticReportCoding type;
 
     @JsonProperty("id")
     public String getId() { return id; }
@@ -46,7 +46,7 @@ public class PriorDiagnosticReport {
     public void setSpecimen(Reference value) { this.specimen = value; }
 
     @JsonProperty("type")
-    public CodingMolecularDiagnosticReport getType() { return type; }
+    public MolecularDiagnosticReportCoding getType() { return type; }
     @JsonProperty("type")
-    public void setType(CodingMolecularDiagnosticReport value) { this.type = value; }
+    public void setType(MolecularDiagnosticReportCoding value) { this.type = value; }
 }

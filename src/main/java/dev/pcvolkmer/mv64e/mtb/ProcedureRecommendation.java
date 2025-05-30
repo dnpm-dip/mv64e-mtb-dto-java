@@ -5,19 +5,19 @@ import java.util.Date;
 import java.util.List;
 
 public class ProcedureRecommendation {
-    private CodingMtbProcedureRecommendationCategory code;
+    private MtbProcedureRecommendationCategoryCoding code;
     private String id;
     private Date issuedOn;
     private LevelOfEvidence levelOfEvidence;
     private Reference patient;
-    private CodingRecommendationPriority priority;
+    private RecommendationPriorityCoding priority;
     private Reference reason;
     private List<GeneAlterationReference> supportingVariants;
 
     @JsonProperty("code")
-    public CodingMtbProcedureRecommendationCategory getCode() { return code; }
+    public MtbProcedureRecommendationCategoryCoding getCode() { return code; }
     @JsonProperty("code")
-    public void setCode(CodingMtbProcedureRecommendationCategory value) { this.code = value; }
+    public void setCode(MtbProcedureRecommendationCategoryCoding value) { this.code = value; }
 
     @JsonProperty("id")
     public String getId() { return id; }
@@ -42,9 +42,9 @@ public class ProcedureRecommendation {
     public void setPatient(Reference value) { this.patient = value; }
 
     @JsonProperty("priority")
-    public CodingRecommendationPriority getPriority() { return priority; }
+    public RecommendationPriorityCoding getPriority() { return priority; }
     @JsonProperty("priority")
-    public void setPriority(CodingRecommendationPriority value) { this.priority = value; }
+    public void setPriority(RecommendationPriorityCoding value) { this.priority = value; }
 
     @JsonProperty("reason")
     public Reference getReason() { return reason; }

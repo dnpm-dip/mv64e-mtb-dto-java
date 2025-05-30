@@ -4,17 +4,18 @@ import com.fasterxml.jackson.annotation.*;
 import java.util.List;
 
 public class Mtb {
-    private List<MTBCarePlan> carePlans;
+    private List<MtbCarePlan> carePlans;
     private List<ClaimResponse> claimResponses;
     private List<Claim> claims;
-    private List<MTBDiagnosis> diagnoses;
-    private List<MTBEpisodeOfCare> episodesOfCare;
+    private List<MtbDiagnosis> diagnoses;
+    private List<MtbEpisodeOfCare> episodesOfCare;
     private List<FollowUp> followUps;
     private List<OncoProcedure> guidelineProcedures;
-    private List<MTBSystemicTherapy> guidelineTherapies;
+    private List<MtbSystemicTherapy> guidelineTherapies;
     private List<HistologyReport> histologyReports;
-    private List<IHCReport> ihcReports;
-    private List<SomaticNgsReportMetadata> ngsReports;
+    private List<IhcReport> ihcReports;
+    private MvhMetadata metadata;
+    private List<SomaticNgsReport> ngsReports;
     private Patient patient;
     private List<PerformanceStatus> performanceStatus;
     private List<PriorDiagnosticReport> priorDiagnosticReports;
@@ -23,9 +24,9 @@ public class Mtb {
     private List<SystemicTherapy> systemicTherapies;
 
     @JsonProperty("carePlans")
-    public List<MTBCarePlan> getCarePlans() { return carePlans; }
+    public List<MtbCarePlan> getCarePlans() { return carePlans; }
     @JsonProperty("carePlans")
-    public void setCarePlans(List<MTBCarePlan> value) { this.carePlans = value; }
+    public void setCarePlans(List<MtbCarePlan> value) { this.carePlans = value; }
 
     @JsonProperty("claimResponses")
     public List<ClaimResponse> getClaimResponses() { return claimResponses; }
@@ -38,14 +39,14 @@ public class Mtb {
     public void setClaims(List<Claim> value) { this.claims = value; }
 
     @JsonProperty("diagnoses")
-    public List<MTBDiagnosis> getDiagnoses() { return diagnoses; }
+    public List<MtbDiagnosis> getDiagnoses() { return diagnoses; }
     @JsonProperty("diagnoses")
-    public void setDiagnoses(List<MTBDiagnosis> value) { this.diagnoses = value; }
+    public void setDiagnoses(List<MtbDiagnosis> value) { this.diagnoses = value; }
 
     @JsonProperty("episodesOfCare")
-    public List<MTBEpisodeOfCare> getEpisodesOfCare() { return episodesOfCare; }
+    public List<MtbEpisodeOfCare> getEpisodesOfCare() { return episodesOfCare; }
     @JsonProperty("episodesOfCare")
-    public void setEpisodesOfCare(List<MTBEpisodeOfCare> value) { this.episodesOfCare = value; }
+    public void setEpisodesOfCare(List<MtbEpisodeOfCare> value) { this.episodesOfCare = value; }
 
     @JsonProperty("followUps")
     public List<FollowUp> getFollowUps() { return followUps; }
@@ -58,9 +59,9 @@ public class Mtb {
     public void setGuidelineProcedures(List<OncoProcedure> value) { this.guidelineProcedures = value; }
 
     @JsonProperty("guidelineTherapies")
-    public List<MTBSystemicTherapy> getGuidelineTherapies() { return guidelineTherapies; }
+    public List<MtbSystemicTherapy> getGuidelineTherapies() { return guidelineTherapies; }
     @JsonProperty("guidelineTherapies")
-    public void setGuidelineTherapies(List<MTBSystemicTherapy> value) { this.guidelineTherapies = value; }
+    public void setGuidelineTherapies(List<MtbSystemicTherapy> value) { this.guidelineTherapies = value; }
 
     @JsonProperty("histologyReports")
     public List<HistologyReport> getHistologyReports() { return histologyReports; }
@@ -68,14 +69,19 @@ public class Mtb {
     public void setHistologyReports(List<HistologyReport> value) { this.histologyReports = value; }
 
     @JsonProperty("ihcReports")
-    public List<IHCReport> getIhcReports() { return ihcReports; }
+    public List<IhcReport> getIhcReports() { return ihcReports; }
     @JsonProperty("ihcReports")
-    public void setIhcReports(List<IHCReport> value) { this.ihcReports = value; }
+    public void setIhcReports(List<IhcReport> value) { this.ihcReports = value; }
+
+    @JsonProperty("metadata")
+    public MvhMetadata getMetadata() { return metadata; }
+    @JsonProperty("metadata")
+    public void setMetadata(MvhMetadata value) { this.metadata = value; }
 
     @JsonProperty("ngsReports")
-    public List<SomaticNgsReportMetadata> getNgsReports() { return ngsReports; }
+    public List<SomaticNgsReport> getNgsReports() { return ngsReports; }
     @JsonProperty("ngsReports")
-    public void setNgsReports(List<SomaticNgsReportMetadata> value) { this.ngsReports = value; }
+    public void setNgsReports(List<SomaticNgsReport> value) { this.ngsReports = value; }
 
     @JsonProperty("patient")
     public Patient getPatient() { return patient; }

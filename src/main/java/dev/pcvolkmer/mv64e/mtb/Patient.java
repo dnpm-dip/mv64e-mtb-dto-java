@@ -8,11 +8,11 @@ public class Patient {
     private Age age;
     private Date birthDate;
     private Date dateOfDeath;
-    private CodingGender gender;
+    private GenderCoding gender;
     private HealthInsurance healthInsurance;
     private String id;
     private Coding managingSite;
-    private CodingVitalStatus vitalStatus;
+    private VitalStatusCoding vitalStatus;
 
     @JsonProperty("address")
     public Address getAddress() { return address; }
@@ -37,9 +37,9 @@ public class Patient {
     public void setDateOfDeath(Date value) { this.dateOfDeath = value; }
 
     @JsonProperty("gender")
-    public CodingGender getGender() { return gender; }
+    public GenderCoding getGender() { return gender; }
     @JsonProperty("gender")
-    public void setGender(CodingGender value) { this.gender = value; }
+    public void setGender(GenderCoding value) { this.gender = value; }
 
     @JsonProperty("healthInsurance")
     public HealthInsurance getHealthInsurance() { return healthInsurance; }
@@ -57,7 +57,7 @@ public class Patient {
     public void setManagingSite(Coding value) { this.managingSite = value; }
 
     @JsonProperty("vitalStatus")
-    public CodingVitalStatus getVitalStatus() { return vitalStatus; }
+    public VitalStatusCoding getVitalStatus() { return vitalStatus; }
     @JsonProperty("vitalStatus")
-    public void setVitalStatus(CodingVitalStatus value) { this.vitalStatus = value; }
+    public void setVitalStatus(VitalStatusCoding value) { this.vitalStatus = value; }
 }

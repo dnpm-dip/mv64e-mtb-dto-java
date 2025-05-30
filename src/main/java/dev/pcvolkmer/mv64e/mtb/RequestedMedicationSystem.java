@@ -4,12 +4,12 @@ import java.io.IOException;
 import com.fasterxml.jackson.annotation.*;
 
 public enum RequestedMedicationSystem {
-    HTTP_FHIR_DE_CODE_SYSTEM_BFARM_ATC, UNDEFINED;
+    FHIR_DE_CODE_SYSTEM_BFARM_ATC, UNDEFINED;
 
     @JsonValue
     public String toValue() {
         switch (this) {
-            case HTTP_FHIR_DE_CODE_SYSTEM_BFARM_ATC: return "http://fhir.de/CodeSystem/bfarm/atc";
+            case FHIR_DE_CODE_SYSTEM_BFARM_ATC: return "http://fhir.de/CodeSystem/bfarm/atc";
             case UNDEFINED: return "undefined";
         }
         return null;
@@ -17,7 +17,7 @@ public enum RequestedMedicationSystem {
 
     @JsonCreator
     public static RequestedMedicationSystem forValue(String value) throws IOException {
-        if (value.equals("http://fhir.de/CodeSystem/bfarm/atc")) return HTTP_FHIR_DE_CODE_SYSTEM_BFARM_ATC;
+        if (value.equals("http://fhir.de/CodeSystem/bfarm/atc")) return FHIR_DE_CODE_SYSTEM_BFARM_ATC;
         if (value.equals("undefined")) return UNDEFINED;
         throw new IOException("Cannot deserialize RequestedMedicationSystem");
     }

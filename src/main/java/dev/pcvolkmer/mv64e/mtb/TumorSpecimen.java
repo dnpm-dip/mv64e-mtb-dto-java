@@ -7,7 +7,7 @@ public class TumorSpecimen {
     private Reference diagnosis;
     private String id;
     private Reference patient;
-    private CodingTumorSpecimen type;
+    private TumorSpecimenCoding type;
 
     @JsonProperty("collection")
     public Collection getCollection() { return collection; }
@@ -30,7 +30,7 @@ public class TumorSpecimen {
     public void setPatient(Reference value) { this.patient = value; }
 
     @JsonProperty("type")
-    public CodingTumorSpecimen getType() { return type; }
+    public TumorSpecimenCoding getType() { return type; }
     @JsonProperty("type")
-    public void setType(CodingTumorSpecimen value) { this.type = value; }
+    public void setType(TumorSpecimenCoding value) { this.type = value; }
 }

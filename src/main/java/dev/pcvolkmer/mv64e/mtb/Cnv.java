@@ -11,14 +11,14 @@ public class Cnv {
     private EndRange endRange;
     private List<VariantExternalId> externalIds;
     private String id;
-    private List<CodingBaseVariantLocalization> localization;
+    private List<BaseVariantLocalizationCoding> localization;
     private Reference patient;
     private Double relativeCopyNumber;
     private List<Coding> reportedAffectedGenes;
     private String reportedFocality;
     private StartRange startRange;
     private Long totalCopyNumber;
-    private CodingCnv type;
+    private CnvCoding type;
 
     @JsonProperty("chromosome")
     public Chromosome getChromosome() { return chromosome; }
@@ -56,9 +56,9 @@ public class Cnv {
     public void setId(String value) { this.id = value; }
 
     @JsonProperty("localization")
-    public List<CodingBaseVariantLocalization> getLocalization() { return localization; }
+    public List<BaseVariantLocalizationCoding> getLocalization() { return localization; }
     @JsonProperty("localization")
-    public void setLocalization(List<CodingBaseVariantLocalization> value) { this.localization = value; }
+    public void setLocalization(List<BaseVariantLocalizationCoding> value) { this.localization = value; }
 
     @JsonProperty("patient")
     public Reference getPatient() { return patient; }
@@ -91,7 +91,7 @@ public class Cnv {
     public void setTotalCopyNumber(Long value) { this.totalCopyNumber = value; }
 
     @JsonProperty("type")
-    public CodingCnv getType() { return type; }
+    public CnvCoding getType() { return type; }
     @JsonProperty("type")
-    public void setType(CodingCnv value) { this.type = value; }
+    public void setType(CnvCoding value) { this.type = value; }
 }

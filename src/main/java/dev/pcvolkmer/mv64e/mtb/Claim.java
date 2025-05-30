@@ -9,8 +9,8 @@ public class Claim {
     private Date issuedOn;
     private Reference patient;
     private Reference recommendation;
-    private List<CodingAtcUnregisteredMedication> requestedMedication;
-    private CodingClaimStage stage;
+    private List<AtcUnregisteredMedicationCoding> requestedMedication;
+    private ClaimStageCoding stage;
 
     @JsonProperty("id")
     public String getId() { return id; }
@@ -35,12 +35,12 @@ public class Claim {
     public void setRecommendation(Reference value) { this.recommendation = value; }
 
     @JsonProperty("requestedMedication")
-    public List<CodingAtcUnregisteredMedication> getRequestedMedication() { return requestedMedication; }
+    public List<AtcUnregisteredMedicationCoding> getRequestedMedication() { return requestedMedication; }
     @JsonProperty("requestedMedication")
-    public void setRequestedMedication(List<CodingAtcUnregisteredMedication> value) { this.requestedMedication = value; }
+    public void setRequestedMedication(List<AtcUnregisteredMedicationCoding> value) { this.requestedMedication = value; }
 
     @JsonProperty("stage")
-    public CodingClaimStage getStage() { return stage; }
+    public ClaimStageCoding getStage() { return stage; }
     @JsonProperty("stage")
-    public void setStage(CodingClaimStage value) { this.stage = value; }
+    public void setStage(ClaimStageCoding value) { this.stage = value; }
 }

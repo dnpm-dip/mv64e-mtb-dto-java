@@ -4,19 +4,19 @@ import com.fasterxml.jackson.annotation.*;
 import java.util.List;
 
 public class LevelOfEvidence {
-    private List<CodingLevelOfEvidenceAddendum> addendums;
-    private CodingLevelOfEvidenceGrading grading;
+    private List<LevelOfEvidenceAddendumCoding> addendums;
+    private LevelOfEvidenceGradingCoding grading;
     private List<PublicationReference> publications;
 
     @JsonProperty("addendums")
-    public List<CodingLevelOfEvidenceAddendum> getAddendums() { return addendums; }
+    public List<LevelOfEvidenceAddendumCoding> getAddendums() { return addendums; }
     @JsonProperty("addendums")
-    public void setAddendums(List<CodingLevelOfEvidenceAddendum> value) { this.addendums = value; }
+    public void setAddendums(List<LevelOfEvidenceAddendumCoding> value) { this.addendums = value; }
 
     @JsonProperty("grading")
-    public CodingLevelOfEvidenceGrading getGrading() { return grading; }
+    public LevelOfEvidenceGradingCoding getGrading() { return grading; }
     @JsonProperty("grading")
-    public void setGrading(CodingLevelOfEvidenceGrading value) { this.grading = value; }
+    public void setGrading(LevelOfEvidenceGradingCoding value) { this.grading = value; }
 
     @JsonProperty("publications")
     public List<PublicationReference> getPublications() { return publications; }

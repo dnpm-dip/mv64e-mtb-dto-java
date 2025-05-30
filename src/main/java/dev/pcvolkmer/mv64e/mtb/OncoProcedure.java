@@ -6,16 +6,16 @@ import java.util.List;
 
 public class OncoProcedure {
     private Reference basedOn;
-    private CodingOncoProcedure code;
+    private OncoProcedureCoding code;
     private String id;
-    private CodingMtbTherapyIntent intent;
+    private MtbTherapyIntentCoding intent;
     private List<String> notes;
     private Reference patient;
     private PeriodDate period;
     private Reference reason;
     private Date recordedOn;
-    private CodingTherapyStatus status;
-    private CodingMtbTherapyStatusReason statusReason;
+    private TherapyStatusCoding status;
+    private MtbTherapyStatusReasonCoding statusReason;
     private Long therapyLine;
 
     @JsonProperty("basedOn")
@@ -24,9 +24,9 @@ public class OncoProcedure {
     public void setBasedOn(Reference value) { this.basedOn = value; }
 
     @JsonProperty("code")
-    public CodingOncoProcedure getCode() { return code; }
+    public OncoProcedureCoding getCode() { return code; }
     @JsonProperty("code")
-    public void setCode(CodingOncoProcedure value) { this.code = value; }
+    public void setCode(OncoProcedureCoding value) { this.code = value; }
 
     @JsonProperty("id")
     public String getId() { return id; }
@@ -34,9 +34,9 @@ public class OncoProcedure {
     public void setId(String value) { this.id = value; }
 
     @JsonProperty("intent")
-    public CodingMtbTherapyIntent getIntent() { return intent; }
+    public MtbTherapyIntentCoding getIntent() { return intent; }
     @JsonProperty("intent")
-    public void setIntent(CodingMtbTherapyIntent value) { this.intent = value; }
+    public void setIntent(MtbTherapyIntentCoding value) { this.intent = value; }
 
     @JsonProperty("notes")
     public List<String> getNotes() { return notes; }
@@ -66,14 +66,14 @@ public class OncoProcedure {
     public void setRecordedOn(Date value) { this.recordedOn = value; }
 
     @JsonProperty("status")
-    public CodingTherapyStatus getStatus() { return status; }
+    public TherapyStatusCoding getStatus() { return status; }
     @JsonProperty("status")
-    public void setStatus(CodingTherapyStatus value) { this.status = value; }
+    public void setStatus(TherapyStatusCoding value) { this.status = value; }
 
     @JsonProperty("statusReason")
-    public CodingMtbTherapyStatusReason getStatusReason() { return statusReason; }
+    public MtbTherapyStatusReasonCoding getStatusReason() { return statusReason; }
     @JsonProperty("statusReason")
-    public void setStatusReason(CodingMtbTherapyStatusReason value) { this.statusReason = value; }
+    public void setStatusReason(MtbTherapyStatusReasonCoding value) { this.statusReason = value; }
 
     @JsonProperty("therapyLine")
     public Long getTherapyLine() { return therapyLine; }

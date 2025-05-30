@@ -7,16 +7,16 @@ public class Snv {
     private double allelicFrequency;
     private String altAllele;
     private Chromosome chromosome;
-    private Coding dnaChange;
+    private String dnaChange;
     private String exonId;
     private List<VariantExternalId> externalIds;
     private Coding gene;
     private String id;
-    private CodingClinVar interpretation;
-    private List<CodingBaseVariantLocalization> localization;
+    private ClinVarCoding interpretation;
+    private List<BaseVariantLocalizationCoding> localization;
     private Reference patient;
     private Position position;
-    private Coding proteinChange;
+    private String proteinChange;
     private long readDepth;
     private String refAllele;
     private TranscriptId transcriptId;
@@ -37,9 +37,9 @@ public class Snv {
     public void setChromosome(Chromosome value) { this.chromosome = value; }
 
     @JsonProperty("dnaChange")
-    public Coding getDnaChange() { return dnaChange; }
+    public String getDnaChange() { return dnaChange; }
     @JsonProperty("dnaChange")
-    public void setDnaChange(Coding value) { this.dnaChange = value; }
+    public void setDnaChange(String value) { this.dnaChange = value; }
 
     @JsonProperty("exonId")
     public String getExonId() { return exonId; }
@@ -62,14 +62,14 @@ public class Snv {
     public void setId(String value) { this.id = value; }
 
     @JsonProperty("interpretation")
-    public CodingClinVar getInterpretation() { return interpretation; }
+    public ClinVarCoding getInterpretation() { return interpretation; }
     @JsonProperty("interpretation")
-    public void setInterpretation(CodingClinVar value) { this.interpretation = value; }
+    public void setInterpretation(ClinVarCoding value) { this.interpretation = value; }
 
     @JsonProperty("localization")
-    public List<CodingBaseVariantLocalization> getLocalization() { return localization; }
+    public List<BaseVariantLocalizationCoding> getLocalization() { return localization; }
     @JsonProperty("localization")
-    public void setLocalization(List<CodingBaseVariantLocalization> value) { this.localization = value; }
+    public void setLocalization(List<BaseVariantLocalizationCoding> value) { this.localization = value; }
 
     @JsonProperty("patient")
     public Reference getPatient() { return patient; }
@@ -82,9 +82,9 @@ public class Snv {
     public void setPosition(Position value) { this.position = value; }
 
     @JsonProperty("proteinChange")
-    public Coding getProteinChange() { return proteinChange; }
+    public String getProteinChange() { return proteinChange; }
     @JsonProperty("proteinChange")
-    public void setProteinChange(Coding value) { this.proteinChange = value; }
+    public void setProteinChange(String value) { this.proteinChange = value; }
 
     @JsonProperty("readDepth")
     public long getReadDepth() { return readDepth; }

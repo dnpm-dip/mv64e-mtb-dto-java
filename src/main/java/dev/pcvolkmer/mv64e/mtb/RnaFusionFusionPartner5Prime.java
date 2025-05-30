@@ -6,7 +6,7 @@ public class RnaFusionFusionPartner5Prime {
     private String exonId;
     private Coding gene;
     private double position;
-    private RNAFusionStrand strand;
+    private RnaFusionStrand strand;
     private TranscriptId transcriptId;
 
     @JsonProperty("exonId")
@@ -25,9 +25,9 @@ public class RnaFusionFusionPartner5Prime {
     public void setPosition(double value) { this.position = value; }
 
     @JsonProperty("strand")
-    public RNAFusionStrand getStrand() { return strand; }
+    public RnaFusionStrand getStrand() { return strand; }
     @JsonProperty("strand")
-    public void setStrand(RNAFusionStrand value) { this.strand = value; }
+    public void setStrand(RnaFusionStrand value) { this.strand = value; }
 
     @JsonProperty("transcriptId")
     public TranscriptId getTranscriptId() { return transcriptId; }

@@ -3,18 +3,18 @@ package dev.pcvolkmer.mv64e.mtb;
 import com.fasterxml.jackson.annotation.*;
 
 public class MSIMmr {
-    private CodingProteinExpressionIcScore icScore;
+    private ProteinExpressionIcScoreCoding icScore;
     private String id;
     private Reference patient;
     private Coding protein;
-    private CodingProteinExpressionTcScore tcScore;
+    private ProteinExpressionTcScoreCoding tcScore;
     private Long tpsScore;
-    private CodingProteinExpressionResult value;
+    private ProteinExpressionResultCoding value;
 
     @JsonProperty("icScore")
-    public CodingProteinExpressionIcScore getIcScore() { return icScore; }
+    public ProteinExpressionIcScoreCoding getIcScore() { return icScore; }
     @JsonProperty("icScore")
-    public void setIcScore(CodingProteinExpressionIcScore value) { this.icScore = value; }
+    public void setIcScore(ProteinExpressionIcScoreCoding value) { this.icScore = value; }
 
     @JsonProperty("id")
     public String getId() { return id; }
@@ -32,9 +32,9 @@ public class MSIMmr {
     public void setProtein(Coding value) { this.protein = value; }
 
     @JsonProperty("tcScore")
-    public CodingProteinExpressionTcScore getTcScore() { return tcScore; }
+    public ProteinExpressionTcScoreCoding getTcScore() { return tcScore; }
     @JsonProperty("tcScore")
-    public void setTcScore(CodingProteinExpressionTcScore value) { this.tcScore = value; }
+    public void setTcScore(ProteinExpressionTcScoreCoding value) { this.tcScore = value; }
 
     @JsonProperty("tpsScore")
     public Long getTpsScore() { return tpsScore; }
@@ -42,7 +42,7 @@ public class MSIMmr {
     public void setTpsScore(Long value) { this.tpsScore = value; }
 
     @JsonProperty("value")
-    public CodingProteinExpressionResult getValue() { return value; }
+    public ProteinExpressionResultCoding getValue() { return value; }
     @JsonProperty("value")
-    public void setValue(CodingProteinExpressionResult value) { this.value = value; }
+    public void setValue(ProteinExpressionResultCoding value) { this.value = value; }
 }

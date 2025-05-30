@@ -5,7 +5,7 @@ import java.util.Date;
 
 public class History {
     private Date date;
-    private CodingMtbDiagnosis value;
+    private MtbDiagnosisCoding value;
 
     @JsonProperty("date")
     @JsonFormat(pattern = "yyyy-MM-dd")
@@ -15,7 +15,7 @@ public class History {
     public void setDate(Date value) { this.date = value; }
 
     @JsonProperty("value")
-    public CodingMtbDiagnosis getValue() { return value; }
+    public MtbDiagnosisCoding getValue() { return value; }
     @JsonProperty("value")
-    public void setValue(CodingMtbDiagnosis value) { this.value = value; }
+    public void setValue(MtbDiagnosisCoding value) { this.value = value; }
 }

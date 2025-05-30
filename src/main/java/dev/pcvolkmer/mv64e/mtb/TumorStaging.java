@@ -6,7 +6,7 @@ import java.util.List;
 
 public class TumorStaging {
     private Date date;
-    private CodingTumorStagingMethod method;
+    private TumorStagingMethodCoding method;
     private List<Coding> otherClassifications;
     private TnmClassification tnmClassification;
 
@@ -18,9 +18,9 @@ public class TumorStaging {
     public void setDate(Date value) { this.date = value; }
 
     @JsonProperty("method")
-    public CodingTumorStagingMethod getMethod() { return method; }
+    public TumorStagingMethodCoding getMethod() { return method; }
     @JsonProperty("method")
-    public void setMethod(CodingTumorStagingMethod value) { this.method = value; }
+    public void setMethod(TumorStagingMethodCoding value) { this.method = value; }
 
     @JsonProperty("otherClassifications")
     public List<Coding> getOtherClassifications() { return otherClassifications; }

@@ -8,8 +8,8 @@ public class ClaimResponse {
     private String id;
     private Date issuedOn;
     private Reference patient;
-    private CodingClaimResponseStatus status;
-    private CodingClaimResponseStatusReason statusReason;
+    private ClaimResponseStatusCoding status;
+    private ClaimResponseStatusReasonCoding statusReason;
 
     @JsonProperty("claim")
     public Reference getClaim() { return claim; }
@@ -34,12 +34,12 @@ public class ClaimResponse {
     public void setPatient(Reference value) { this.patient = value; }
 
     @JsonProperty("status")
-    public CodingClaimResponseStatus getStatus() { return status; }
+    public ClaimResponseStatusCoding getStatus() { return status; }
     @JsonProperty("status")
-    public void setStatus(CodingClaimResponseStatus value) { this.status = value; }
+    public void setStatus(ClaimResponseStatusCoding value) { this.status = value; }
 
     @JsonProperty("statusReason")
-    public CodingClaimResponseStatusReason getStatusReason() { return statusReason; }
+    public ClaimResponseStatusReasonCoding getStatusReason() { return statusReason; }
     @JsonProperty("statusReason")
-    public void setStatusReason(CodingClaimResponseStatusReason value) { this.statusReason = value; }
+    public void setStatusReason(ClaimResponseStatusReasonCoding value) { this.statusReason = value; }
 }

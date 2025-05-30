@@ -7,7 +7,7 @@ public class GeneticCounselingRecommendation {
     private String id;
     private Date issuedOn;
     private Reference patient;
-    private CodingGeneticCounselingRecommendationReason reason;
+    private GeneticCounselingRecommendationReasonCoding reason;
 
     @JsonProperty("id")
     public String getId() { return id; }
@@ -27,7 +27,7 @@ public class GeneticCounselingRecommendation {
     public void setPatient(Reference value) { this.patient = value; }
 
     @JsonProperty("reason")
-    public CodingGeneticCounselingRecommendationReason getReason() { return reason; }
+    public GeneticCounselingRecommendationReasonCoding getReason() { return reason; }
     @JsonProperty("reason")
-    public void setReason(CodingGeneticCounselingRecommendationReason value) { this.reason = value; }
+    public void setReason(GeneticCounselingRecommendationReasonCoding value) { this.reason = value; }
 }

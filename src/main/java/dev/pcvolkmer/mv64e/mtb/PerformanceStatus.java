@@ -7,7 +7,7 @@ public class PerformanceStatus {
     private Date effectiveDate;
     private String id;
     private Reference patient;
-    private CodingEcog value;
+    private EcogCoding value;
 
     @JsonProperty("effectiveDate")
     @JsonFormat(pattern = "yyyy-MM-dd")
@@ -27,7 +27,7 @@ public class PerformanceStatus {
     public void setPatient(Reference value) { this.patient = value; }
 
     @JsonProperty("value")
-    public CodingEcog getValue() { return value; }
+    public EcogCoding getValue() { return value; }
     @JsonProperty("value")
-    public void setValue(CodingEcog value) { this.value = value; }
+    public void setValue(EcogCoding value) { this.value = value; }
 }
