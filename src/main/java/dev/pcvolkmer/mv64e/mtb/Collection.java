@@ -5,23 +5,21 @@ import java.util.Date;
 
 public class Collection {
     private Date date;
-    private CodingTumorSpecimenCollectionLocalization localization;
-    private CodingTumorSpecimenCollectionMethod method;
+    private TumorSpecimenCollectionLocalizationCoding localization;
+    private TumorSpecimenCollectionMethodCoding method;
 
     @JsonProperty("date")
-    @JsonFormat(pattern = "yyyy-MM-dd")
     public Date getDate() { return date; }
     @JsonProperty("date")
-    @JsonFormat(pattern = "yyyy-MM-dd")
     public void setDate(Date value) { this.date = value; }
 
     @JsonProperty("localization")
-    public CodingTumorSpecimenCollectionLocalization getLocalization() { return localization; }
+    public TumorSpecimenCollectionLocalizationCoding getLocalization() { return localization; }
     @JsonProperty("localization")
-    public void setLocalization(CodingTumorSpecimenCollectionLocalization value) { this.localization = value; }
+    public void setLocalization(TumorSpecimenCollectionLocalizationCoding value) { this.localization = value; }
 
     @JsonProperty("method")
-    public CodingTumorSpecimenCollectionMethod getMethod() { return method; }
+    public TumorSpecimenCollectionMethodCoding getMethod() { return method; }
     @JsonProperty("method")
-    public void setMethod(CodingTumorSpecimenCollectionMethod value) { this.method = value; }
+    public void setMethod(TumorSpecimenCollectionMethodCoding value) { this.method = value; }
 }

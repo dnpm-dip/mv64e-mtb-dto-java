@@ -6,21 +6,20 @@ import java.util.List;
 public class Snv {
     private double allelicFrequency;
     private String altAllele;
-    private Coding aminoAcidChange;
-    private CodingChromosome chromosome;
-    private String cosmicId;
-    private String dbSnpId;
-    private Coding dnaChange;
-    private List<ExternalId> externalIds;
-    private CodingGene gene;
+    private Chromosome chromosome;
+    private String dnaChange;
+    private String exonId;
+    private List<VariantExternalId> externalIds;
+    private Coding gene;
     private String id;
-    private Coding interpretation;
-    private Patient patient;
+    private ClinVarCoding interpretation;
+    private List<BaseVariantLocalizationCoding> localization;
+    private Reference patient;
     private Position position;
-    private Coding proteinChange;
+    private String proteinChange;
     private long readDepth;
     private String refAllele;
-    private ExternalId transcriptId;
+    private TranscriptId transcriptId;
 
     @JsonProperty("allelicFrequency")
     public double getAllelicFrequency() { return allelicFrequency; }
@@ -32,40 +31,30 @@ public class Snv {
     @JsonProperty("altAllele")
     public void setAltAllele(String value) { this.altAllele = value; }
 
-    @JsonProperty("aminoAcidChange")
-    public Coding getAminoAcidChange() { return aminoAcidChange; }
-    @JsonProperty("aminoAcidChange")
-    public void setAminoAcidChange(Coding value) { this.aminoAcidChange = value; }
-
     @JsonProperty("chromosome")
-    public CodingChromosome getChromosome() { return chromosome; }
+    public Chromosome getChromosome() { return chromosome; }
     @JsonProperty("chromosome")
-    public void setChromosome(CodingChromosome value) { this.chromosome = value; }
-
-    @JsonProperty("cosmicId")
-    public String getCosmicId() { return cosmicId; }
-    @JsonProperty("cosmicId")
-    public void setCosmicId(String value) { this.cosmicId = value; }
-
-    @JsonProperty("dbSNPId")
-    public String getDbSnpId() { return dbSnpId; }
-    @JsonProperty("dbSNPId")
-    public void setDbSnpId(String value) { this.dbSnpId = value; }
+    public void setChromosome(Chromosome value) { this.chromosome = value; }
 
     @JsonProperty("dnaChange")
-    public Coding getDnaChange() { return dnaChange; }
+    public String getDnaChange() { return dnaChange; }
     @JsonProperty("dnaChange")
-    public void setDnaChange(Coding value) { this.dnaChange = value; }
+    public void setDnaChange(String value) { this.dnaChange = value; }
+
+    @JsonProperty("exonId")
+    public String getExonId() { return exonId; }
+    @JsonProperty("exonId")
+    public void setExonId(String value) { this.exonId = value; }
 
     @JsonProperty("externalIds")
-    public List<ExternalId> getExternalIds() { return externalIds; }
+    public List<VariantExternalId> getExternalIds() { return externalIds; }
     @JsonProperty("externalIds")
-    public void setExternalIds(List<ExternalId> value) { this.externalIds = value; }
+    public void setExternalIds(List<VariantExternalId> value) { this.externalIds = value; }
 
     @JsonProperty("gene")
-    public CodingGene getGene() { return gene; }
+    public Coding getGene() { return gene; }
     @JsonProperty("gene")
-    public void setGene(CodingGene value) { this.gene = value; }
+    public void setGene(Coding value) { this.gene = value; }
 
     @JsonProperty("id")
     public String getId() { return id; }
@@ -73,14 +62,19 @@ public class Snv {
     public void setId(String value) { this.id = value; }
 
     @JsonProperty("interpretation")
-    public Coding getInterpretation() { return interpretation; }
+    public ClinVarCoding getInterpretation() { return interpretation; }
     @JsonProperty("interpretation")
-    public void setInterpretation(Coding value) { this.interpretation = value; }
+    public void setInterpretation(ClinVarCoding value) { this.interpretation = value; }
+
+    @JsonProperty("localization")
+    public List<BaseVariantLocalizationCoding> getLocalization() { return localization; }
+    @JsonProperty("localization")
+    public void setLocalization(List<BaseVariantLocalizationCoding> value) { this.localization = value; }
 
     @JsonProperty("patient")
-    public Patient getPatient() { return patient; }
+    public Reference getPatient() { return patient; }
     @JsonProperty("patient")
-    public void setPatient(Patient value) { this.patient = value; }
+    public void setPatient(Reference value) { this.patient = value; }
 
     @JsonProperty("position")
     public Position getPosition() { return position; }
@@ -88,9 +82,9 @@ public class Snv {
     public void setPosition(Position value) { this.position = value; }
 
     @JsonProperty("proteinChange")
-    public Coding getProteinChange() { return proteinChange; }
+    public String getProteinChange() { return proteinChange; }
     @JsonProperty("proteinChange")
-    public void setProteinChange(Coding value) { this.proteinChange = value; }
+    public void setProteinChange(String value) { this.proteinChange = value; }
 
     @JsonProperty("readDepth")
     public long getReadDepth() { return readDepth; }
@@ -103,7 +97,7 @@ public class Snv {
     public void setRefAllele(String value) { this.refAllele = value; }
 
     @JsonProperty("transcriptId")
-    public ExternalId getTranscriptId() { return transcriptId; }
+    public TranscriptId getTranscriptId() { return transcriptId; }
     @JsonProperty("transcriptId")
-    public void setTranscriptId(ExternalId value) { this.transcriptId = value; }
+    public void setTranscriptId(TranscriptId value) { this.transcriptId = value; }
 }

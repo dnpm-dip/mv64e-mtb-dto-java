@@ -4,9 +4,9 @@ import com.fasterxml.jackson.annotation.*;
 
 public class TumorCellContent {
     private String id;
-    private CodingTumorCellContentMethod method;
-    private Patient patient;
-    private TumorCellContentSpecimen specimen;
+    private TumorCellContentMethodCoding method;
+    private Reference patient;
+    private Reference specimen;
     private double value;
 
     @JsonProperty("id")
@@ -15,19 +15,19 @@ public class TumorCellContent {
     public void setId(String value) { this.id = value; }
 
     @JsonProperty("method")
-    public CodingTumorCellContentMethod getMethod() { return method; }
+    public TumorCellContentMethodCoding getMethod() { return method; }
     @JsonProperty("method")
-    public void setMethod(CodingTumorCellContentMethod value) { this.method = value; }
+    public void setMethod(TumorCellContentMethodCoding value) { this.method = value; }
 
     @JsonProperty("patient")
-    public Patient getPatient() { return patient; }
+    public Reference getPatient() { return patient; }
     @JsonProperty("patient")
-    public void setPatient(Patient value) { this.patient = value; }
+    public void setPatient(Reference value) { this.patient = value; }
 
     @JsonProperty("specimen")
-    public TumorCellContentSpecimen getSpecimen() { return specimen; }
+    public Reference getSpecimen() { return specimen; }
     @JsonProperty("specimen")
-    public void setSpecimen(TumorCellContentSpecimen value) { this.specimen = value; }
+    public void setSpecimen(Reference value) { this.specimen = value; }
 
     @JsonProperty("value")
     public double getValue() { return value; }

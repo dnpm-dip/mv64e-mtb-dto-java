@@ -4,10 +4,10 @@ import com.fasterxml.jackson.annotation.*;
 
 public class Tmb {
     private String id;
-    private Coding interpretation;
+    private TmbInterpretationCoding interpretation;
     private Reference patient;
     private Reference specimen;
-    private Value value;
+    private TmbResult value;
 
     @JsonProperty("id")
     public String getId() { return id; }
@@ -15,9 +15,9 @@ public class Tmb {
     public void setId(String value) { this.id = value; }
 
     @JsonProperty("interpretation")
-    public Coding getInterpretation() { return interpretation; }
+    public TmbInterpretationCoding getInterpretation() { return interpretation; }
     @JsonProperty("interpretation")
-    public void setInterpretation(Coding value) { this.interpretation = value; }
+    public void setInterpretation(TmbInterpretationCoding value) { this.interpretation = value; }
 
     @JsonProperty("patient")
     public Reference getPatient() { return patient; }
@@ -30,7 +30,7 @@ public class Tmb {
     public void setSpecimen(Reference value) { this.specimen = value; }
 
     @JsonProperty("value")
-    public Value getValue() { return value; }
+    public TmbResult getValue() { return value; }
     @JsonProperty("value")
-    public void setValue(Value value) { this.value = value; }
+    public void setValue(TmbResult value) { this.value = value; }
 }

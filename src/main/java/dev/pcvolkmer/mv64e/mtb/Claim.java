@@ -2,13 +2,15 @@ package dev.pcvolkmer.mv64e.mtb;
 
 import com.fasterxml.jackson.annotation.*;
 import java.util.Date;
+import java.util.List;
 
 public class Claim {
     private String id;
     private Date issuedOn;
-    private Patient patient;
-    private Recommendation recommendation;
-    private Coding stage;
+    private Reference patient;
+    private Reference recommendation;
+    private List<AtcUnregisteredMedicationCoding> requestedMedication;
+    private ClaimStageCoding stage;
 
     @JsonProperty("id")
     public String getId() { return id; }
@@ -23,17 +25,22 @@ public class Claim {
     public void setIssuedOn(Date value) { this.issuedOn = value; }
 
     @JsonProperty("patient")
-    public Patient getPatient() { return patient; }
+    public Reference getPatient() { return patient; }
     @JsonProperty("patient")
-    public void setPatient(Patient value) { this.patient = value; }
+    public void setPatient(Reference value) { this.patient = value; }
 
     @JsonProperty("recommendation")
-    public Recommendation getRecommendation() { return recommendation; }
+    public Reference getRecommendation() { return recommendation; }
     @JsonProperty("recommendation")
-    public void setRecommendation(Recommendation value) { this.recommendation = value; }
+    public void setRecommendation(Reference value) { this.recommendation = value; }
+
+    @JsonProperty("requestedMedication")
+    public List<AtcUnregisteredMedicationCoding> getRequestedMedication() { return requestedMedication; }
+    @JsonProperty("requestedMedication")
+    public void setRequestedMedication(List<AtcUnregisteredMedicationCoding> value) { this.requestedMedication = value; }
 
     @JsonProperty("stage")
-    public Coding getStage() { return stage; }
+    public ClaimStageCoding getStage() { return stage; }
     @JsonProperty("stage")
-    public void setStage(Coding value) { this.stage = value; }
+    public void setStage(ClaimStageCoding value) { this.stage = value; }
 }

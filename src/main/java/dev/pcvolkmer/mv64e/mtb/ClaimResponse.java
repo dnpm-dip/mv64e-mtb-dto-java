@@ -4,17 +4,17 @@ import com.fasterxml.jackson.annotation.*;
 import java.util.Date;
 
 public class ClaimResponse {
-    private ClaimResponseClaim claim;
+    private Reference claim;
     private String id;
     private Date issuedOn;
-    private Patient patient;
-    private CodingClaimResponseStatus status;
-    private CodingClaimResponseStatusReason statusReason;
+    private Reference patient;
+    private ClaimResponseStatusCoding status;
+    private ClaimResponseStatusReasonCoding statusReason;
 
     @JsonProperty("claim")
-    public ClaimResponseClaim getClaim() { return claim; }
+    public Reference getClaim() { return claim; }
     @JsonProperty("claim")
-    public void setClaim(ClaimResponseClaim value) { this.claim = value; }
+    public void setClaim(Reference value) { this.claim = value; }
 
     @JsonProperty("id")
     public String getId() { return id; }
@@ -29,17 +29,17 @@ public class ClaimResponse {
     public void setIssuedOn(Date value) { this.issuedOn = value; }
 
     @JsonProperty("patient")
-    public Patient getPatient() { return patient; }
+    public Reference getPatient() { return patient; }
     @JsonProperty("patient")
-    public void setPatient(Patient value) { this.patient = value; }
+    public void setPatient(Reference value) { this.patient = value; }
 
     @JsonProperty("status")
-    public CodingClaimResponseStatus getStatus() { return status; }
+    public ClaimResponseStatusCoding getStatus() { return status; }
     @JsonProperty("status")
-    public void setStatus(CodingClaimResponseStatus value) { this.status = value; }
+    public void setStatus(ClaimResponseStatusCoding value) { this.status = value; }
 
     @JsonProperty("statusReason")
-    public CodingClaimResponseStatusReason getStatusReason() { return statusReason; }
+    public ClaimResponseStatusReasonCoding getStatusReason() { return statusReason; }
     @JsonProperty("statusReason")
-    public void setStatusReason(CodingClaimResponseStatusReason value) { this.statusReason = value; }
+    public void setStatusReason(ClaimResponseStatusReasonCoding value) { this.statusReason = value; }
 }

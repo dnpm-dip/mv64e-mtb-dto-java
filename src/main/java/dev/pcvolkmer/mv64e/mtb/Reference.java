@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.*;
 public class Reference {
     private String display;
     private String id;
+    private String system;
     private String type;
 
     @JsonProperty("display")
@@ -16,6 +17,11 @@ public class Reference {
     public String getId() { return id; }
     @JsonProperty("id")
     public void setId(String value) { this.id = value; }
+
+    @JsonProperty("system")
+    public String getSystem() { return system; }
+    @JsonProperty("system")
+    public void setSystem(String value) { this.system = value; }
 
     @JsonProperty("type")
     public String getType() { return type; }

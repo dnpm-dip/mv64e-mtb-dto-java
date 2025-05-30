@@ -4,20 +4,20 @@ import com.fasterxml.jackson.annotation.*;
 import java.util.List;
 
 public class NgsReportResults {
-    private BRCAness brcaness;
+    private Brcaness brcaness;
     private List<Cnv> copyNumberVariants;
-    private List<DNAFusion> dnaFusions;
-    private HRDScore hrdScore;
-    private List<RNAFusion> rnaFusions;
-    private List<RNASeq> rnaSeqs;
+    private List<DnaFusion> dnaFusions;
+    private HrdScore hrdScore;
+    private List<RnaFusion> rnaFusions;
+    private List<RnaSeq> rnaSeqs;
     private List<Snv> simpleVariants;
     private Tmb tmb;
     private TumorCellContent tumorCellContent;
 
     @JsonProperty("brcaness")
-    public BRCAness getBrcaness() { return brcaness; }
+    public Brcaness getBrcaness() { return brcaness; }
     @JsonProperty("brcaness")
-    public void setBrcaness(BRCAness value) { this.brcaness = value; }
+    public void setBrcaness(Brcaness value) { this.brcaness = value; }
 
     @JsonProperty("copyNumberVariants")
     public List<Cnv> getCopyNumberVariants() { return copyNumberVariants; }
@@ -25,24 +25,24 @@ public class NgsReportResults {
     public void setCopyNumberVariants(List<Cnv> value) { this.copyNumberVariants = value; }
 
     @JsonProperty("dnaFusions")
-    public List<DNAFusion> getDnaFusions() { return dnaFusions; }
+    public List<DnaFusion> getDnaFusions() { return dnaFusions; }
     @JsonProperty("dnaFusions")
-    public void setDnaFusions(List<DNAFusion> value) { this.dnaFusions = value; }
+    public void setDnaFusions(List<DnaFusion> value) { this.dnaFusions = value; }
 
     @JsonProperty("hrdScore")
-    public HRDScore getHrdScore() { return hrdScore; }
+    public HrdScore getHrdScore() { return hrdScore; }
     @JsonProperty("hrdScore")
-    public void setHrdScore(HRDScore value) { this.hrdScore = value; }
+    public void setHrdScore(HrdScore value) { this.hrdScore = value; }
 
     @JsonProperty("rnaFusions")
-    public List<RNAFusion> getRnaFusions() { return rnaFusions; }
+    public List<RnaFusion> getRnaFusions() { return rnaFusions; }
     @JsonProperty("rnaFusions")
-    public void setRnaFusions(List<RNAFusion> value) { this.rnaFusions = value; }
+    public void setRnaFusions(List<RnaFusion> value) { this.rnaFusions = value; }
 
     @JsonProperty("rnaSeqs")
-    public List<RNASeq> getRnaSeqs() { return rnaSeqs; }
+    public List<RnaSeq> getRnaSeqs() { return rnaSeqs; }
     @JsonProperty("rnaSeqs")
-    public void setRnaSeqs(List<RNASeq> value) { this.rnaSeqs = value; }
+    public void setRnaSeqs(List<RnaSeq> value) { this.rnaSeqs = value; }
 
     @JsonProperty("simpleVariants")
     public List<Snv> getSimpleVariants() { return simpleVariants; }
