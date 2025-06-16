@@ -1,7 +1,9 @@
 package dev.pcvolkmer.mv64e.mtb;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.io.IOException;
-import com.fasterxml.jackson.annotation.*;
 
 public enum ExternalIdSystem {
     CANCER_SANGER_AC_UK_COSMIC, ENSEMBL_ORG, NCBI_NLM_NIH_GOV_ENTREZ, NCBI_NLM_NIH_GOV_SNP;

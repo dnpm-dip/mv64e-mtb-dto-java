@@ -1,24 +1,20 @@
 package dev.pcvolkmer.mv64e.mtb;
 
-import com.fasterxml.jackson.annotation.*;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.*;
 
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 public class DnaFusionFusionPartner3Prime {
+    @Getter(onMethod_ = {@JsonProperty("chromosome")})
+    @Setter(onMethod_ = {@JsonProperty("chromosome")})
     private Chromosome chromosome;
+    @Getter(onMethod_ = {@JsonProperty("gene")})
+    @Setter(onMethod_ = {@JsonProperty("gene")})
     private Coding gene;
+    @Getter(onMethod_ = {@JsonProperty("position")})
+    @Setter(onMethod_ = {@JsonProperty("position")})
     private double position;
-
-    @JsonProperty("chromosome")
-    public Chromosome getChromosome() { return chromosome; }
-    @JsonProperty("chromosome")
-    public void setChromosome(Chromosome value) { this.chromosome = value; }
-
-    @JsonProperty("gene")
-    public Coding getGene() { return gene; }
-    @JsonProperty("gene")
-    public void setGene(Coding value) { this.gene = value; }
-
-    @JsonProperty("position")
-    public double getPosition() { return position; }
-    @JsonProperty("position")
-    public void setPosition(double value) { this.position = value; }
 }

@@ -1,88 +1,54 @@
 package dev.pcvolkmer.mv64e.mtb;
 
-import com.fasterxml.jackson.annotation.*;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.*;
+
 import java.util.Date;
 import java.util.List;
 
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 public class MtbCarePlan {
+    @Getter(onMethod_ = {@JsonProperty("geneticCounselingRecommendation")})
+    @Setter(onMethod_ = {@JsonProperty("geneticCounselingRecommendation")})
     private GeneticCounselingRecommendation geneticCounselingRecommendation;
+    @Getter(onMethod_ = {@JsonProperty("histologyReevaluationRequests")})
+    @Setter(onMethod_ = {@JsonProperty("histologyReevaluationRequests")})
     private List<HistologyReevaluationRequest> histologyReevaluationRequests;
+    @Getter(onMethod_ = {@JsonProperty("id")})
+    @Setter(onMethod_ = {@JsonProperty("id")})
     private String id;
+    @Getter(onMethod_ = {@JsonProperty("issuedOn"), @JsonFormat(pattern = "yyyy-MM-dd")})
+    @Setter(onMethod_ = {@JsonProperty("issuedOn"), @JsonFormat(pattern = "yyyy-MM-dd")})
     private Date issuedOn;
+    @Getter(onMethod_ = {@JsonProperty("medicationRecommendations")})
+    @Setter(onMethod_ = {@JsonProperty("medicationRecommendations")})
     private List<MtbMedicationRecommendation> medicationRecommendations;
+    @Getter(onMethod_ = {@JsonProperty("noSequencingPerformedReason")})
+    @Setter(onMethod_ = {@JsonProperty("noSequencingPerformedReason")})
     private CarePlanNoSequencingPerformedReasonCoding noSequencingPerformedReason;
+    @Getter(onMethod_ = {@JsonProperty("notes")})
+    @Setter(onMethod_ = {@JsonProperty("notes")})
     private List<String> notes;
+    @Getter(onMethod_ = {@JsonProperty("patient")})
+    @Setter(onMethod_ = {@JsonProperty("patient")})
     private Reference patient;
+    @Getter(onMethod_ = {@JsonProperty("procedureRecommendations")})
+    @Setter(onMethod_ = {@JsonProperty("procedureRecommendations")})
     private List<ProcedureRecommendation> procedureRecommendations;
+    @Getter(onMethod_ = {@JsonProperty("reason")})
+    @Setter(onMethod_ = {@JsonProperty("reason")})
     private Reference reason;
+    @Getter(onMethod_ = {@JsonProperty("rebiopsyRequests")})
+    @Setter(onMethod_ = {@JsonProperty("rebiopsyRequests")})
     private List<RebiopsyRequest> rebiopsyRequests;
+    @Getter(onMethod_ = {@JsonProperty("recommendationsMissingReason")})
+    @Setter(onMethod_ = {@JsonProperty("recommendationsMissingReason")})
     private MtbCarePlanRecommendationsMissingReasonCoding recommendationsMissingReason;
+    @Getter(onMethod_ = {@JsonProperty("studyEnrollmentRecommendations")})
+    @Setter(onMethod_ = {@JsonProperty("studyEnrollmentRecommendations")})
     private List<MtbStudyEnrollmentRecommendation> studyEnrollmentRecommendations;
-
-    @JsonProperty("geneticCounselingRecommendation")
-    public GeneticCounselingRecommendation getGeneticCounselingRecommendation() { return geneticCounselingRecommendation; }
-    @JsonProperty("geneticCounselingRecommendation")
-    public void setGeneticCounselingRecommendation(GeneticCounselingRecommendation value) { this.geneticCounselingRecommendation = value; }
-
-    @JsonProperty("histologyReevaluationRequests")
-    public List<HistologyReevaluationRequest> getHistologyReevaluationRequests() { return histologyReevaluationRequests; }
-    @JsonProperty("histologyReevaluationRequests")
-    public void setHistologyReevaluationRequests(List<HistologyReevaluationRequest> value) { this.histologyReevaluationRequests = value; }
-
-    @JsonProperty("id")
-    public String getId() { return id; }
-    @JsonProperty("id")
-    public void setId(String value) { this.id = value; }
-
-    @JsonProperty("issuedOn")
-    @JsonFormat(pattern = "yyyy-MM-dd")
-    public Date getIssuedOn() { return issuedOn; }
-    @JsonProperty("issuedOn")
-    @JsonFormat(pattern = "yyyy-MM-dd")
-    public void setIssuedOn(Date value) { this.issuedOn = value; }
-
-    @JsonProperty("medicationRecommendations")
-    public List<MtbMedicationRecommendation> getMedicationRecommendations() { return medicationRecommendations; }
-    @JsonProperty("medicationRecommendations")
-    public void setMedicationRecommendations(List<MtbMedicationRecommendation> value) { this.medicationRecommendations = value; }
-
-    @JsonProperty("noSequencingPerformedReason")
-    public CarePlanNoSequencingPerformedReasonCoding getNoSequencingPerformedReason() { return noSequencingPerformedReason; }
-    @JsonProperty("noSequencingPerformedReason")
-    public void setNoSequencingPerformedReason(CarePlanNoSequencingPerformedReasonCoding value) { this.noSequencingPerformedReason = value; }
-
-    @JsonProperty("notes")
-    public List<String> getNotes() { return notes; }
-    @JsonProperty("notes")
-    public void setNotes(List<String> value) { this.notes = value; }
-
-    @JsonProperty("patient")
-    public Reference getPatient() { return patient; }
-    @JsonProperty("patient")
-    public void setPatient(Reference value) { this.patient = value; }
-
-    @JsonProperty("procedureRecommendations")
-    public List<ProcedureRecommendation> getProcedureRecommendations() { return procedureRecommendations; }
-    @JsonProperty("procedureRecommendations")
-    public void setProcedureRecommendations(List<ProcedureRecommendation> value) { this.procedureRecommendations = value; }
-
-    @JsonProperty("reason")
-    public Reference getReason() { return reason; }
-    @JsonProperty("reason")
-    public void setReason(Reference value) { this.reason = value; }
-
-    @JsonProperty("rebiopsyRequests")
-    public List<RebiopsyRequest> getRebiopsyRequests() { return rebiopsyRequests; }
-    @JsonProperty("rebiopsyRequests")
-    public void setRebiopsyRequests(List<RebiopsyRequest> value) { this.rebiopsyRequests = value; }
-
-    @JsonProperty("recommendationsMissingReason")
-    public MtbCarePlanRecommendationsMissingReasonCoding getRecommendationsMissingReason() { return recommendationsMissingReason; }
-    @JsonProperty("recommendationsMissingReason")
-    public void setRecommendationsMissingReason(MtbCarePlanRecommendationsMissingReasonCoding value) { this.recommendationsMissingReason = value; }
-
-    @JsonProperty("studyEnrollmentRecommendations")
-    public List<MtbStudyEnrollmentRecommendation> getStudyEnrollmentRecommendations() { return studyEnrollmentRecommendations; }
-    @JsonProperty("studyEnrollmentRecommendations")
-    public void setStudyEnrollmentRecommendations(List<MtbStudyEnrollmentRecommendation> value) { this.studyEnrollmentRecommendations = value; }
 }

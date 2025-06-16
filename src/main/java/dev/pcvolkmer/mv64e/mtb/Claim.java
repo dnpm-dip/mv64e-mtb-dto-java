@@ -1,46 +1,33 @@
 package dev.pcvolkmer.mv64e.mtb;
 
-import com.fasterxml.jackson.annotation.*;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.*;
+
 import java.util.Date;
 import java.util.List;
 
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 public class Claim {
+    @Getter(onMethod_ = {@JsonProperty("id")})
+    @Setter(onMethod_ = {@JsonProperty("id")})
     private String id;
+    @Getter(onMethod_ = {@JsonProperty("issuedOn"), @JsonFormat(pattern = "yyyy-MM-dd")})
+    @Setter(onMethod_ = {@JsonProperty("issuedOn"), @JsonFormat(pattern = "yyyy-MM-dd")})
     private Date issuedOn;
+    @Getter(onMethod_ = {@JsonProperty("patient")})
+    @Setter(onMethod_ = {@JsonProperty("patient")})
     private Reference patient;
+    @Getter(onMethod_ = {@JsonProperty("recommendation")})
+    @Setter(onMethod_ = {@JsonProperty("recommendation")})
     private Reference recommendation;
+    @Getter(onMethod_ = {@JsonProperty("requestedMedication")})
+    @Setter(onMethod_ = {@JsonProperty("requestedMedication")})
     private List<AtcUnregisteredMedicationCoding> requestedMedication;
+    @Getter(onMethod_ = {@JsonProperty("stage")})
+    @Setter(onMethod_ = {@JsonProperty("stage")})
     private ClaimStageCoding stage;
-
-    @JsonProperty("id")
-    public String getId() { return id; }
-    @JsonProperty("id")
-    public void setId(String value) { this.id = value; }
-
-    @JsonProperty("issuedOn")
-    @JsonFormat(pattern = "yyyy-MM-dd")
-    public Date getIssuedOn() { return issuedOn; }
-    @JsonProperty("issuedOn")
-    @JsonFormat(pattern = "yyyy-MM-dd")
-    public void setIssuedOn(Date value) { this.issuedOn = value; }
-
-    @JsonProperty("patient")
-    public Reference getPatient() { return patient; }
-    @JsonProperty("patient")
-    public void setPatient(Reference value) { this.patient = value; }
-
-    @JsonProperty("recommendation")
-    public Reference getRecommendation() { return recommendation; }
-    @JsonProperty("recommendation")
-    public void setRecommendation(Reference value) { this.recommendation = value; }
-
-    @JsonProperty("requestedMedication")
-    public List<AtcUnregisteredMedicationCoding> getRequestedMedication() { return requestedMedication; }
-    @JsonProperty("requestedMedication")
-    public void setRequestedMedication(List<AtcUnregisteredMedicationCoding> value) { this.requestedMedication = value; }
-
-    @JsonProperty("stage")
-    public ClaimStageCoding getStage() { return stage; }
-    @JsonProperty("stage")
-    public void setStage(ClaimStageCoding value) { this.stage = value; }
 }

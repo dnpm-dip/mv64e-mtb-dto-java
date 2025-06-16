@@ -1,12 +1,14 @@
 package dev.pcvolkmer.mv64e.mtb;
 
-import com.fasterxml.jackson.annotation.*;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.*;
 
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 public class Address {
+    @Getter(onMethod_ = {@JsonProperty("municipalityCode")})
+    @Setter(onMethod_ = {@JsonProperty("municipalityCode")})
     private String municipalityCode;
-
-    @JsonProperty("municipalityCode")
-    public String getMunicipalityCode() { return municipalityCode; }
-    @JsonProperty("municipalityCode")
-    public void setMunicipalityCode(String value) { this.municipalityCode = value; }
 }

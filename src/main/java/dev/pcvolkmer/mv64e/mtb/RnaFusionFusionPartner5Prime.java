@@ -1,36 +1,26 @@
 package dev.pcvolkmer.mv64e.mtb;
 
-import com.fasterxml.jackson.annotation.*;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.*;
 
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 public class RnaFusionFusionPartner5Prime {
+    @Getter(onMethod_ = {@JsonProperty("exonId")})
+    @Setter(onMethod_ = {@JsonProperty("exonId")})
     private String exonId;
+    @Getter(onMethod_ = {@JsonProperty("gene")})
+    @Setter(onMethod_ = {@JsonProperty("gene")})
     private Coding gene;
+    @Getter(onMethod_ = {@JsonProperty("position")})
+    @Setter(onMethod_ = {@JsonProperty("position")})
     private double position;
+    @Getter(onMethod_ = {@JsonProperty("strand")})
+    @Setter(onMethod_ = {@JsonProperty("strand")})
     private RnaFusionStrand strand;
+    @Getter(onMethod_ = {@JsonProperty("transcriptId")})
+    @Setter(onMethod_ = {@JsonProperty("transcriptId")})
     private TranscriptId transcriptId;
-
-    @JsonProperty("exonId")
-    public String getExonId() { return exonId; }
-    @JsonProperty("exonId")
-    public void setExonId(String value) { this.exonId = value; }
-
-    @JsonProperty("gene")
-    public Coding getGene() { return gene; }
-    @JsonProperty("gene")
-    public void setGene(Coding value) { this.gene = value; }
-
-    @JsonProperty("position")
-    public double getPosition() { return position; }
-    @JsonProperty("position")
-    public void setPosition(double value) { this.position = value; }
-
-    @JsonProperty("strand")
-    public RnaFusionStrand getStrand() { return strand; }
-    @JsonProperty("strand")
-    public void setStrand(RnaFusionStrand value) { this.strand = value; }
-
-    @JsonProperty("transcriptId")
-    public TranscriptId getTranscriptId() { return transcriptId; }
-    @JsonProperty("transcriptId")
-    public void setTranscriptId(TranscriptId value) { this.transcriptId = value; }
 }

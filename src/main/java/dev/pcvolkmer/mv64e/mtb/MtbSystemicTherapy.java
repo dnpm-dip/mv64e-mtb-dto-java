@@ -1,100 +1,60 @@
 package dev.pcvolkmer.mv64e.mtb;
 
-import com.fasterxml.jackson.annotation.*;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.*;
+
 import java.util.Date;
 import java.util.List;
 
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 public class MtbSystemicTherapy {
+    @Getter(onMethod_ = {@JsonProperty("basedOn")})
+    @Setter(onMethod_ = {@JsonProperty("basedOn")})
     private Reference basedOn;
+    @Getter(onMethod_ = {@JsonProperty("category")})
+    @Setter(onMethod_ = {@JsonProperty("category")})
     private MtbSystemicTherapyCategoryCoding category;
+    @Getter(onMethod_ = {@JsonProperty("dosage")})
+    @Setter(onMethod_ = {@JsonProperty("dosage")})
     private MtbSystemicTherapyDosageDensityCoding dosage;
+    @Getter(onMethod_ = {@JsonProperty("id")})
+    @Setter(onMethod_ = {@JsonProperty("id")})
     private String id;
+    @Getter(onMethod_ = {@JsonProperty("intent")})
+    @Setter(onMethod_ = {@JsonProperty("intent")})
     private MtbTherapyIntentCoding intent;
+    @Getter(onMethod_ = {@JsonProperty("medication")})
+    @Setter(onMethod_ = {@JsonProperty("medication")})
     private List<AtcUnregisteredMedicationCoding> medication;
+    @Getter(onMethod_ = {@JsonProperty("notes")})
+    @Setter(onMethod_ = {@JsonProperty("notes")})
     private List<String> notes;
+    @Getter(onMethod_ = {@JsonProperty("patient")})
+    @Setter(onMethod_ = {@JsonProperty("patient")})
     private Reference patient;
+    @Getter(onMethod_ = {@JsonProperty("period")})
+    @Setter(onMethod_ = {@JsonProperty("period")})
     private PeriodDate period;
+    @Getter(onMethod_ = {@JsonProperty("reason")})
+    @Setter(onMethod_ = {@JsonProperty("reason")})
     private Reference reason;
+    @Getter(onMethod_ = {@JsonProperty("recommendationFulfillmentStatus")})
+    @Setter(onMethod_ = {@JsonProperty("recommendationFulfillmentStatus")})
     private MtbSystemicTherapyRecommendationFulfillmentStatusCoding recommendationFulfillmentStatus;
+    @Getter(onMethod_ = {@JsonProperty("recordedOn"), @JsonFormat(pattern = "yyyy-MM-dd")})
+    @Setter(onMethod_ = {@JsonProperty("recordedOn"), @JsonFormat(pattern = "yyyy-MM-dd")})
     private Date recordedOn;
+    @Getter(onMethod_ = {@JsonProperty("status")})
+    @Setter(onMethod_ = {@JsonProperty("status")})
     private TherapyStatusCoding status;
+    @Getter(onMethod_ = {@JsonProperty("statusReason")})
+    @Setter(onMethod_ = {@JsonProperty("statusReason")})
     private MtbTherapyStatusReasonCoding statusReason;
+    @Getter(onMethod_ = {@JsonProperty("therapyLine")})
+    @Setter(onMethod_ = {@JsonProperty("therapyLine")})
     private Long therapyLine;
-
-    @JsonProperty("basedOn")
-    public Reference getBasedOn() { return basedOn; }
-    @JsonProperty("basedOn")
-    public void setBasedOn(Reference value) { this.basedOn = value; }
-
-    @JsonProperty("category")
-    public MtbSystemicTherapyCategoryCoding getCategory() { return category; }
-    @JsonProperty("category")
-    public void setCategory(MtbSystemicTherapyCategoryCoding value) { this.category = value; }
-
-    @JsonProperty("dosage")
-    public MtbSystemicTherapyDosageDensityCoding getDosage() { return dosage; }
-    @JsonProperty("dosage")
-    public void setDosage(MtbSystemicTherapyDosageDensityCoding value) { this.dosage = value; }
-
-    @JsonProperty("id")
-    public String getId() { return id; }
-    @JsonProperty("id")
-    public void setId(String value) { this.id = value; }
-
-    @JsonProperty("intent")
-    public MtbTherapyIntentCoding getIntent() { return intent; }
-    @JsonProperty("intent")
-    public void setIntent(MtbTherapyIntentCoding value) { this.intent = value; }
-
-    @JsonProperty("medication")
-    public List<AtcUnregisteredMedicationCoding> getMedication() { return medication; }
-    @JsonProperty("medication")
-    public void setMedication(List<AtcUnregisteredMedicationCoding> value) { this.medication = value; }
-
-    @JsonProperty("notes")
-    public List<String> getNotes() { return notes; }
-    @JsonProperty("notes")
-    public void setNotes(List<String> value) { this.notes = value; }
-
-    @JsonProperty("patient")
-    public Reference getPatient() { return patient; }
-    @JsonProperty("patient")
-    public void setPatient(Reference value) { this.patient = value; }
-
-    @JsonProperty("period")
-    public PeriodDate getPeriod() { return period; }
-    @JsonProperty("period")
-    public void setPeriod(PeriodDate value) { this.period = value; }
-
-    @JsonProperty("reason")
-    public Reference getReason() { return reason; }
-    @JsonProperty("reason")
-    public void setReason(Reference value) { this.reason = value; }
-
-    @JsonProperty("recommendationFulfillmentStatus")
-    public MtbSystemicTherapyRecommendationFulfillmentStatusCoding getRecommendationFulfillmentStatus() { return recommendationFulfillmentStatus; }
-    @JsonProperty("recommendationFulfillmentStatus")
-    public void setRecommendationFulfillmentStatus(MtbSystemicTherapyRecommendationFulfillmentStatusCoding value) { this.recommendationFulfillmentStatus = value; }
-
-    @JsonProperty("recordedOn")
-    @JsonFormat(pattern = "yyyy-MM-dd")
-    public Date getRecordedOn() { return recordedOn; }
-    @JsonProperty("recordedOn")
-    @JsonFormat(pattern = "yyyy-MM-dd")
-    public void setRecordedOn(Date value) { this.recordedOn = value; }
-
-    @JsonProperty("status")
-    public TherapyStatusCoding getStatus() { return status; }
-    @JsonProperty("status")
-    public void setStatus(TherapyStatusCoding value) { this.status = value; }
-
-    @JsonProperty("statusReason")
-    public MtbTherapyStatusReasonCoding getStatusReason() { return statusReason; }
-    @JsonProperty("statusReason")
-    public void setStatusReason(MtbTherapyStatusReasonCoding value) { this.statusReason = value; }
-
-    @JsonProperty("therapyLine")
-    public Long getTherapyLine() { return therapyLine; }
-    @JsonProperty("therapyLine")
-    public void setTherapyLine(Long value) { this.therapyLine = value; }
 }

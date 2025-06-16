@@ -1,79 +1,49 @@
 package dev.pcvolkmer.mv64e.mtb;
 
-import com.fasterxml.jackson.annotation.*;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.*;
+
 import java.util.List;
 
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 public class RnaSeq {
+    @Getter(onMethod_ = {@JsonProperty("cohortRanking")})
+    @Setter(onMethod_ = {@JsonProperty("cohortRanking")})
     private Long cohortRanking;
+    @Getter(onMethod_ = {@JsonProperty("externalIds")})
+    @Setter(onMethod_ = {@JsonProperty("externalIds")})
     private List<VariantExternalId> externalIds;
+    @Getter(onMethod_ = {@JsonProperty("gene")})
+    @Setter(onMethod_ = {@JsonProperty("gene")})
     private Coding gene;
+    @Getter(onMethod_ = {@JsonProperty("id")})
+    @Setter(onMethod_ = {@JsonProperty("id")})
     private String id;
+    @Getter(onMethod_ = {@JsonProperty("librarySize")})
+    @Setter(onMethod_ = {@JsonProperty("librarySize")})
     private Long librarySize;
+    @Getter(onMethod_ = {@JsonProperty("localization")})
+    @Setter(onMethod_ = {@JsonProperty("localization")})
     private List<BaseVariantLocalizationCoding> localization;
+    @Getter(onMethod_ = {@JsonProperty("patient")})
+    @Setter(onMethod_ = {@JsonProperty("patient")})
     private Reference patient;
+    @Getter(onMethod_ = {@JsonProperty("rawCounts")})
+    @Setter(onMethod_ = {@JsonProperty("rawCounts")})
     private long rawCounts;
+    @Getter(onMethod_ = {@JsonProperty("tissueCorrectedExpression")})
+    @Setter(onMethod_ = {@JsonProperty("tissueCorrectedExpression")})
     private Boolean tissueCorrectedExpression;
+    @Getter(onMethod_ = {@JsonProperty("transcriptId")})
+    @Setter(onMethod_ = {@JsonProperty("transcriptId")})
     private TranscriptId transcriptId;
+    @Getter(onMethod_ = {@JsonProperty("transcriptsPerMillion")})
+    @Setter(onMethod_ = {@JsonProperty("transcriptsPerMillion")})
     private double transcriptsPerMillion;
+    @Getter(onMethod_ = {@JsonProperty("variant")})
+    @Setter(onMethod_ = {@JsonProperty("variant")})
     private Reference variant;
-
-    @JsonProperty("cohortRanking")
-    public Long getCohortRanking() { return cohortRanking; }
-    @JsonProperty("cohortRanking")
-    public void setCohortRanking(Long value) { this.cohortRanking = value; }
-
-    @JsonProperty("externalIds")
-    public List<VariantExternalId> getExternalIds() { return externalIds; }
-    @JsonProperty("externalIds")
-    public void setExternalIds(List<VariantExternalId> value) { this.externalIds = value; }
-
-    @JsonProperty("gene")
-    public Coding getGene() { return gene; }
-    @JsonProperty("gene")
-    public void setGene(Coding value) { this.gene = value; }
-
-    @JsonProperty("id")
-    public String getId() { return id; }
-    @JsonProperty("id")
-    public void setId(String value) { this.id = value; }
-
-    @JsonProperty("librarySize")
-    public Long getLibrarySize() { return librarySize; }
-    @JsonProperty("librarySize")
-    public void setLibrarySize(Long value) { this.librarySize = value; }
-
-    @JsonProperty("localization")
-    public List<BaseVariantLocalizationCoding> getLocalization() { return localization; }
-    @JsonProperty("localization")
-    public void setLocalization(List<BaseVariantLocalizationCoding> value) { this.localization = value; }
-
-    @JsonProperty("patient")
-    public Reference getPatient() { return patient; }
-    @JsonProperty("patient")
-    public void setPatient(Reference value) { this.patient = value; }
-
-    @JsonProperty("rawCounts")
-    public long getRawCounts() { return rawCounts; }
-    @JsonProperty("rawCounts")
-    public void setRawCounts(long value) { this.rawCounts = value; }
-
-    @JsonProperty("tissueCorrectedExpression")
-    public Boolean getTissueCorrectedExpression() { return tissueCorrectedExpression; }
-    @JsonProperty("tissueCorrectedExpression")
-    public void setTissueCorrectedExpression(Boolean value) { this.tissueCorrectedExpression = value; }
-
-    @JsonProperty("transcriptId")
-    public TranscriptId getTranscriptId() { return transcriptId; }
-    @JsonProperty("transcriptId")
-    public void setTranscriptId(TranscriptId value) { this.transcriptId = value; }
-
-    @JsonProperty("transcriptsPerMillion")
-    public double getTranscriptsPerMillion() { return transcriptsPerMillion; }
-    @JsonProperty("transcriptsPerMillion")
-    public void setTranscriptsPerMillion(double value) { this.transcriptsPerMillion = value; }
-
-    @JsonProperty("variant")
-    public Reference getVariant() { return variant; }
-    @JsonProperty("variant")
-    public void setVariant(Reference value) { this.variant = value; }
 }

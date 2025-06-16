@@ -1,30 +1,23 @@
 package dev.pcvolkmer.mv64e.mtb;
 
-import com.fasterxml.jackson.annotation.*;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.*;
 
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 public class Reference {
+    @Getter(onMethod_ = {@JsonProperty("display")})
+    @Setter(onMethod_ = {@JsonProperty("display")})
     private String display;
+    @Getter(onMethod_ = {@JsonProperty("id")})
+    @Setter(onMethod_ = {@JsonProperty("id")})
     private String id;
+    @Getter(onMethod_ = {@JsonProperty("system")})
+    @Setter(onMethod_ = {@JsonProperty("system")})
     private String system;
+    @Getter(onMethod_ = {@JsonProperty("type")})
+    @Setter(onMethod_ = {@JsonProperty("type")})
     private String type;
-
-    @JsonProperty("display")
-    public String getDisplay() { return display; }
-    @JsonProperty("display")
-    public void setDisplay(String value) { this.display = value; }
-
-    @JsonProperty("id")
-    public String getId() { return id; }
-    @JsonProperty("id")
-    public void setId(String value) { this.id = value; }
-
-    @JsonProperty("system")
-    public String getSystem() { return system; }
-    @JsonProperty("system")
-    public void setSystem(String value) { this.system = value; }
-
-    @JsonProperty("type")
-    public String getType() { return type; }
-    @JsonProperty("type")
-    public void setType(String value) { this.type = value; }
 }

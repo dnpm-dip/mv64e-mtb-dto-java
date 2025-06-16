@@ -1,33 +1,26 @@
 package dev.pcvolkmer.mv64e.mtb;
 
-import com.fasterxml.jackson.annotation.*;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.*;
+
 import java.util.Date;
 
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 public class PerformanceStatus {
+    @Getter(onMethod_ = {@JsonProperty("effectiveDate"), @JsonFormat(pattern = "yyyy-MM-dd")})
+    @Setter(onMethod_ = {@JsonProperty("effectiveDate"), @JsonFormat(pattern = "yyyy-MM-dd")})
     private Date effectiveDate;
+    @Getter(onMethod_ = {@JsonProperty("id")})
+    @Setter(onMethod_ = {@JsonProperty("id")})
     private String id;
+    @Getter(onMethod_ = {@JsonProperty("patient")})
+    @Setter(onMethod_ = {@JsonProperty("patient")})
     private Reference patient;
+    @Getter(onMethod_ = {@JsonProperty("value")})
+    @Setter(onMethod_ = {@JsonProperty("value")})
     private EcogCoding value;
-
-    @JsonProperty("effectiveDate")
-    @JsonFormat(pattern = "yyyy-MM-dd")
-    public Date getEffectiveDate() { return effectiveDate; }
-    @JsonProperty("effectiveDate")
-    @JsonFormat(pattern = "yyyy-MM-dd")
-    public void setEffectiveDate(Date value) { this.effectiveDate = value; }
-
-    @JsonProperty("id")
-    public String getId() { return id; }
-    @JsonProperty("id")
-    public void setId(String value) { this.id = value; }
-
-    @JsonProperty("patient")
-    public Reference getPatient() { return patient; }
-    @JsonProperty("patient")
-    public void setPatient(Reference value) { this.patient = value; }
-
-    @JsonProperty("value")
-    public EcogCoding getValue() { return value; }
-    @JsonProperty("value")
-    public void setValue(EcogCoding value) { this.value = value; }
 }

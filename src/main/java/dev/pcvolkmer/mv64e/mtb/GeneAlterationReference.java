@@ -1,24 +1,20 @@
 package dev.pcvolkmer.mv64e.mtb;
 
-import com.fasterxml.jackson.annotation.*;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.*;
 
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 public class GeneAlterationReference {
+    @Getter(onMethod_ = {@JsonProperty("display")})
+    @Setter(onMethod_ = {@JsonProperty("display")})
     private String display;
+    @Getter(onMethod_ = {@JsonProperty("gene")})
+    @Setter(onMethod_ = {@JsonProperty("gene")})
     private Coding gene;
+    @Getter(onMethod_ = {@JsonProperty("variant")})
+    @Setter(onMethod_ = {@JsonProperty("variant")})
     private Reference variant;
-
-    @JsonProperty("display")
-    public String getDisplay() { return display; }
-    @JsonProperty("display")
-    public void setDisplay(String value) { this.display = value; }
-
-    @JsonProperty("gene")
-    public Coding getGene() { return gene; }
-    @JsonProperty("gene")
-    public void setGene(Coding value) { this.gene = value; }
-
-    @JsonProperty("variant")
-    public Reference getVariant() { return variant; }
-    @JsonProperty("variant")
-    public void setVariant(Reference value) { this.variant = value; }
 }

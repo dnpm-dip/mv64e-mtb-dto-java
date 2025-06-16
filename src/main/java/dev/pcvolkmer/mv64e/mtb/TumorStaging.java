@@ -1,34 +1,27 @@
 package dev.pcvolkmer.mv64e.mtb;
 
-import com.fasterxml.jackson.annotation.*;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.*;
+
 import java.util.Date;
 import java.util.List;
 
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 public class TumorStaging {
+    @Getter(onMethod_ = {@JsonProperty("date"), @JsonFormat(pattern = "yyyy-MM-dd")})
+    @Setter(onMethod_ = {@JsonProperty("date"), @JsonFormat(pattern = "yyyy-MM-dd")})
     private Date date;
+    @Getter(onMethod_ = {@JsonProperty("method")})
+    @Setter(onMethod_ = {@JsonProperty("method")})
     private TumorStagingMethodCoding method;
+    @Getter(onMethod_ = {@JsonProperty("otherClassifications")})
+    @Setter(onMethod_ = {@JsonProperty("otherClassifications")})
     private List<Coding> otherClassifications;
+    @Getter(onMethod_ = {@JsonProperty("tnmClassification")})
+    @Setter(onMethod_ = {@JsonProperty("tnmClassification")})
     private TnmClassification tnmClassification;
-
-    @JsonProperty("date")
-    @JsonFormat(pattern = "yyyy-MM-dd")
-    public Date getDate() { return date; }
-    @JsonProperty("date")
-    @JsonFormat(pattern = "yyyy-MM-dd")
-    public void setDate(Date value) { this.date = value; }
-
-    @JsonProperty("method")
-    public TumorStagingMethodCoding getMethod() { return method; }
-    @JsonProperty("method")
-    public void setMethod(TumorStagingMethodCoding value) { this.method = value; }
-
-    @JsonProperty("otherClassifications")
-    public List<Coding> getOtherClassifications() { return otherClassifications; }
-    @JsonProperty("otherClassifications")
-    public void setOtherClassifications(List<Coding> value) { this.otherClassifications = value; }
-
-    @JsonProperty("tnmClassification")
-    public TnmClassification getTnmClassification() { return tnmClassification; }
-    @JsonProperty("tnmClassification")
-    public void setTnmClassification(TnmClassification value) { this.tnmClassification = value; }
 }

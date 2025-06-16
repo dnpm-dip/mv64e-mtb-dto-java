@@ -1,30 +1,23 @@
 package dev.pcvolkmer.mv64e.mtb;
 
-import com.fasterxml.jackson.annotation.*;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.*;
 
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 public class GenderCoding {
+    @Getter(onMethod_ = {@JsonProperty("code")})
+    @Setter(onMethod_ = {@JsonProperty("code")})
     private GenderCodingCode code;
+    @Getter(onMethod_ = {@JsonProperty("display")})
+    @Setter(onMethod_ = {@JsonProperty("display")})
     private String display;
+    @Getter(onMethod_ = {@JsonProperty("system")})
+    @Setter(onMethod_ = {@JsonProperty("system")})
     private String system;
+    @Getter(onMethod_ = {@JsonProperty("version")})
+    @Setter(onMethod_ = {@JsonProperty("version")})
     private String version;
-
-    @JsonProperty("code")
-    public GenderCodingCode getCode() { return code; }
-    @JsonProperty("code")
-    public void setCode(GenderCodingCode value) { this.code = value; }
-
-    @JsonProperty("display")
-    public String getDisplay() { return display; }
-    @JsonProperty("display")
-    public void setDisplay(String value) { this.display = value; }
-
-    @JsonProperty("system")
-    public String getSystem() { return system; }
-    @JsonProperty("system")
-    public void setSystem(String value) { this.system = value; }
-
-    @JsonProperty("version")
-    public String getVersion() { return version; }
-    @JsonProperty("version")
-    public void setVersion(String value) { this.version = value; }
 }

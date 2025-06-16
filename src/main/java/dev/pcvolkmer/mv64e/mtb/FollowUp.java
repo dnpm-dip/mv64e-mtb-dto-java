@@ -1,33 +1,26 @@
 package dev.pcvolkmer.mv64e.mtb;
 
-import com.fasterxml.jackson.annotation.*;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.*;
+
 import java.util.Date;
 
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 public class FollowUp {
+    @Getter(onMethod_ = {@JsonProperty("date"), @JsonFormat(pattern = "yyyy-MM-dd")})
+    @Setter(onMethod_ = {@JsonProperty("date"), @JsonFormat(pattern = "yyyy-MM-dd")})
     private Date date;
+    @Getter(onMethod_ = {@JsonProperty("lastContactDate")})
+    @Setter(onMethod_ = {@JsonProperty("lastContactDate")})
     private Date lastContactDate;
+    @Getter(onMethod_ = {@JsonProperty("patient")})
+    @Setter(onMethod_ = {@JsonProperty("patient")})
     private Reference patient;
+    @Getter(onMethod_ = {@JsonProperty("patientStatus")})
+    @Setter(onMethod_ = {@JsonProperty("patientStatus")})
     private FollowUpPatientStatusCoding patientStatus;
-
-    @JsonProperty("date")
-    @JsonFormat(pattern = "yyyy-MM-dd")
-    public Date getDate() { return date; }
-    @JsonProperty("date")
-    @JsonFormat(pattern = "yyyy-MM-dd")
-    public void setDate(Date value) { this.date = value; }
-
-    @JsonProperty("lastContactDate")
-    public Date getLastContactDate() { return lastContactDate; }
-    @JsonProperty("lastContactDate")
-    public void setLastContactDate(Date value) { this.lastContactDate = value; }
-
-    @JsonProperty("patient")
-    public Reference getPatient() { return patient; }
-    @JsonProperty("patient")
-    public void setPatient(Reference value) { this.patient = value; }
-
-    @JsonProperty("patientStatus")
-    public FollowUpPatientStatusCoding getPatientStatus() { return patientStatus; }
-    @JsonProperty("patientStatus")
-    public void setPatientStatus(FollowUpPatientStatusCoding value) { this.patientStatus = value; }
 }
