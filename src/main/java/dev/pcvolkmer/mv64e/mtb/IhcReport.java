@@ -1,52 +1,36 @@
 package dev.pcvolkmer.mv64e.mtb;
 
-import com.fasterxml.jackson.annotation.*;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.*;
+
 import java.util.Date;
 import java.util.List;
 
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 public class IhcReport {
+    @Getter(onMethod_ = {@JsonProperty("blockIds")})
+    @Setter(onMethod_ = {@JsonProperty("blockIds")})
     private List<String> blockIds;
+    @Getter(onMethod_ = {@JsonProperty("id")})
+    @Setter(onMethod_ = {@JsonProperty("id")})
     private String id;
+    @Getter(onMethod_ = {@JsonProperty("issuedOn"), @JsonFormat(pattern = "yyyy-MM-dd")})
+    @Setter(onMethod_ = {@JsonProperty("issuedOn"), @JsonFormat(pattern = "yyyy-MM-dd")})
     private Date issuedOn;
+    @Getter(onMethod_ = {@JsonProperty("journalId")})
+    @Setter(onMethod_ = {@JsonProperty("journalId")})
     private String journalId;
+    @Getter(onMethod_ = {@JsonProperty("patient")})
+    @Setter(onMethod_ = {@JsonProperty("patient")})
     private Reference patient;
+    @Getter(onMethod_ = {@JsonProperty("results")})
+    @Setter(onMethod_ = {@JsonProperty("results")})
     private IhcReportResults results;
+    @Getter(onMethod_ = {@JsonProperty("specimen")})
+    @Setter(onMethod_ = {@JsonProperty("specimen")})
     private Reference specimen;
-
-    @JsonProperty("blockIds")
-    public List<String> getBlockIds() { return blockIds; }
-    @JsonProperty("blockIds")
-    public void setBlockIds(List<String> value) { this.blockIds = value; }
-
-    @JsonProperty("id")
-    public String getId() { return id; }
-    @JsonProperty("id")
-    public void setId(String value) { this.id = value; }
-
-    @JsonProperty("issuedOn")
-    @JsonFormat(pattern = "yyyy-MM-dd")
-    public Date getIssuedOn() { return issuedOn; }
-    @JsonProperty("issuedOn")
-    @JsonFormat(pattern = "yyyy-MM-dd")
-    public void setIssuedOn(Date value) { this.issuedOn = value; }
-
-    @JsonProperty("journalId")
-    public String getJournalId() { return journalId; }
-    @JsonProperty("journalId")
-    public void setJournalId(String value) { this.journalId = value; }
-
-    @JsonProperty("patient")
-    public Reference getPatient() { return patient; }
-    @JsonProperty("patient")
-    public void setPatient(Reference value) { this.patient = value; }
-
-    @JsonProperty("results")
-    public IhcReportResults getResults() { return results; }
-    @JsonProperty("results")
-    public void setResults(IhcReportResults value) { this.results = value; }
-
-    @JsonProperty("specimen")
-    public Reference getSpecimen() { return specimen; }
-    @JsonProperty("specimen")
-    public void setSpecimen(Reference value) { this.specimen = value; }
 }

@@ -1,7 +1,9 @@
 package dev.pcvolkmer.mv64e.mtb;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.io.IOException;
-import com.fasterxml.jackson.annotation.*;
 
 public enum TumorSpecimenCodingCode {
     CRYO_FROZEN, FFPE, FRESH_TISSUE, LIQUID_BIOPSY, UNKNOWN;

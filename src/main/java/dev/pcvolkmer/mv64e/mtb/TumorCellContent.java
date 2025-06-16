@@ -1,36 +1,26 @@
 package dev.pcvolkmer.mv64e.mtb;
 
-import com.fasterxml.jackson.annotation.*;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.*;
 
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 public class TumorCellContent {
+    @Getter(onMethod_ = {@JsonProperty("id")})
+    @Setter(onMethod_ = {@JsonProperty("id")})
     private String id;
+    @Getter(onMethod_ = {@JsonProperty("method")})
+    @Setter(onMethod_ = {@JsonProperty("method")})
     private TumorCellContentMethodCoding method;
+    @Getter(onMethod_ = {@JsonProperty("patient")})
+    @Setter(onMethod_ = {@JsonProperty("patient")})
     private Reference patient;
+    @Getter(onMethod_ = {@JsonProperty("specimen")})
+    @Setter(onMethod_ = {@JsonProperty("specimen")})
     private Reference specimen;
+    @Getter(onMethod_ = {@JsonProperty("value")})
+    @Setter(onMethod_ = {@JsonProperty("value")})
     private double value;
-
-    @JsonProperty("id")
-    public String getId() { return id; }
-    @JsonProperty("id")
-    public void setId(String value) { this.id = value; }
-
-    @JsonProperty("method")
-    public TumorCellContentMethodCoding getMethod() { return method; }
-    @JsonProperty("method")
-    public void setMethod(TumorCellContentMethodCoding value) { this.method = value; }
-
-    @JsonProperty("patient")
-    public Reference getPatient() { return patient; }
-    @JsonProperty("patient")
-    public void setPatient(Reference value) { this.patient = value; }
-
-    @JsonProperty("specimen")
-    public Reference getSpecimen() { return specimen; }
-    @JsonProperty("specimen")
-    public void setSpecimen(Reference value) { this.specimen = value; }
-
-    @JsonProperty("value")
-    public double getValue() { return value; }
-    @JsonProperty("value")
-    public void setValue(double value) { this.value = value; }
 }

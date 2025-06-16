@@ -1,18 +1,17 @@
 package dev.pcvolkmer.mv64e.mtb;
 
-import com.fasterxml.jackson.annotation.*;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.*;
 
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 public class HealthInsurance {
+    @Getter(onMethod_ = {@JsonProperty("reference")})
+    @Setter(onMethod_ = {@JsonProperty("reference")})
     private Reference reference;
+    @Getter(onMethod_ = {@JsonProperty("type")})
+    @Setter(onMethod_ = {@JsonProperty("type")})
     private HealthInsuranceCoding type;
-
-    @JsonProperty("reference")
-    public Reference getReference() { return reference; }
-    @JsonProperty("reference")
-    public void setReference(Reference value) { this.reference = value; }
-
-    @JsonProperty("type")
-    public HealthInsuranceCoding getType() { return type; }
-    @JsonProperty("type")
-    public void setType(HealthInsuranceCoding value) { this.type = value; }
 }

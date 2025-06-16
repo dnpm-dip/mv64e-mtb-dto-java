@@ -1,31 +1,25 @@
 package dev.pcvolkmer.mv64e.mtb;
 
-import com.fasterxml.jackson.annotation.*;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.*;
+
 import java.util.List;
 
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 public class MtbEpisodeOfCare {
+    @Getter(onMethod_ = {@JsonProperty("diagnoses")})
+    @Setter(onMethod_ = {@JsonProperty("diagnoses")})
     private List<Reference> diagnoses;
+    @Getter(onMethod_ = {@JsonProperty("id")})
+    @Setter(onMethod_ = {@JsonProperty("id")})
     private String id;
+    @Getter(onMethod_ = {@JsonProperty("patient")})
+    @Setter(onMethod_ = {@JsonProperty("patient")})
     private Reference patient;
+    @Getter(onMethod_ = {@JsonProperty("period")})
+    @Setter(onMethod_ = {@JsonProperty("period")})
     private PeriodDate period;
-
-    @JsonProperty("diagnoses")
-    public List<Reference> getDiagnoses() { return diagnoses; }
-    @JsonProperty("diagnoses")
-    public void setDiagnoses(List<Reference> value) { this.diagnoses = value; }
-
-    @JsonProperty("id")
-    public String getId() { return id; }
-    @JsonProperty("id")
-    public void setId(String value) { this.id = value; }
-
-    @JsonProperty("patient")
-    public Reference getPatient() { return patient; }
-    @JsonProperty("patient")
-    public void setPatient(Reference value) { this.patient = value; }
-
-    @JsonProperty("period")
-    public PeriodDate getPeriod() { return period; }
-    @JsonProperty("period")
-    public void setPeriod(PeriodDate value) { this.period = value; }
 }

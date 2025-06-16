@@ -1,13 +1,16 @@
 package dev.pcvolkmer.mv64e.mtb;
 
-import com.fasterxml.jackson.annotation.*;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.*;
+
 import java.util.List;
 
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 public class Staging {
+    @Getter(onMethod_ = {@JsonProperty("history")})
+    @Setter(onMethod_ = {@JsonProperty("history")})
     private List<TumorStaging> history;
-
-    @JsonProperty("history")
-    public List<TumorStaging> getHistory() { return history; }
-    @JsonProperty("history")
-    public void setHistory(List<TumorStaging> value) { this.history = value; }
 }

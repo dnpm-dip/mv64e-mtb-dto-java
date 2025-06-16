@@ -1,7 +1,9 @@
 package dev.pcvolkmer.mv64e.mtb;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.io.IOException;
-import com.fasterxml.jackson.annotation.*;
 
 public enum MtbTherapyStatusReasonCodingCode {
     BEST_SUPPORTIVE_CARE, CHRONIC_REMISSION, DETERIORATION, LOST_TO_FU, MEDICAL_REASONS, NO_INDICATION, OTHER, OTHER_THERAPY_CHOSEN, PATIENT_DEATH, PATIENT_REFUSAL, PATIENT_WISH, PAYMENT_ENDED, PAYMENT_PENDING, PAYMENT_REFUSED, PROGRESSION, REGULAR_COMPLETION, REGULAR_COMPLETION_WITH_DOSAGE_REDUCTION, REGULAR_COMPLETION_WITH_SUBSTANCE_CHANGE, TOXICITY;

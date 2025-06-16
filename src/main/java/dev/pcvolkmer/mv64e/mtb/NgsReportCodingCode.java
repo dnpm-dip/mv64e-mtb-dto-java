@@ -1,7 +1,9 @@
 package dev.pcvolkmer.mv64e.mtb;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.io.IOException;
-import com.fasterxml.jackson.annotation.*;
 
 public enum NgsReportCodingCode {
     ARRAY, EXOME, GENOME_LONG_READ, GENOME_SHORT_READ, KARYOTYPING, OTHER, PANEL, SINGLE;

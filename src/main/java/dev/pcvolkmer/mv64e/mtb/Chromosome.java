@@ -1,7 +1,9 @@
 package dev.pcvolkmer.mv64e.mtb;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.io.IOException;
-import com.fasterxml.jackson.annotation.*;
 
 public enum Chromosome {
     CHR1, CHR10, CHR11, CHR12, CHR13, CHR14, CHR15, CHR16, CHR17, CHR18, CHR19, CHR2, CHR20, CHR21, CHR22, CHR3, CHR4, CHR5, CHR6, CHR7, CHR8, CHR9, CHR_X, CHR_Y;

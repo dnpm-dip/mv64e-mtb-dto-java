@@ -1,7 +1,9 @@
 package dev.pcvolkmer.mv64e.mtb;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.io.IOException;
-import com.fasterxml.jackson.annotation.*;
 
 public enum LevelOfEvidenceGradingCodingCode {
     M1A, M1B, M1C, M2A, M2B, M2C, M3, M4, UNDEFINED;

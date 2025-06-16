@@ -1,36 +1,26 @@
 package dev.pcvolkmer.mv64e.mtb;
 
-import com.fasterxml.jackson.annotation.*;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.*;
 
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 public class TumorSpecimen {
+    @Getter(onMethod_ = {@JsonProperty("collection")})
+    @Setter(onMethod_ = {@JsonProperty("collection")})
     private Collection collection;
+    @Getter(onMethod_ = {@JsonProperty("diagnosis")})
+    @Setter(onMethod_ = {@JsonProperty("diagnosis")})
     private Reference diagnosis;
+    @Getter(onMethod_ = {@JsonProperty("id")})
+    @Setter(onMethod_ = {@JsonProperty("id")})
     private String id;
+    @Getter(onMethod_ = {@JsonProperty("patient")})
+    @Setter(onMethod_ = {@JsonProperty("patient")})
     private Reference patient;
+    @Getter(onMethod_ = {@JsonProperty("type")})
+    @Setter(onMethod_ = {@JsonProperty("type")})
     private TumorSpecimenCoding type;
-
-    @JsonProperty("collection")
-    public Collection getCollection() { return collection; }
-    @JsonProperty("collection")
-    public void setCollection(Collection value) { this.collection = value; }
-
-    @JsonProperty("diagnosis")
-    public Reference getDiagnosis() { return diagnosis; }
-    @JsonProperty("diagnosis")
-    public void setDiagnosis(Reference value) { this.diagnosis = value; }
-
-    @JsonProperty("id")
-    public String getId() { return id; }
-    @JsonProperty("id")
-    public void setId(String value) { this.id = value; }
-
-    @JsonProperty("patient")
-    public Reference getPatient() { return patient; }
-    @JsonProperty("patient")
-    public void setPatient(Reference value) { this.patient = value; }
-
-    @JsonProperty("type")
-    public TumorSpecimenCoding getType() { return type; }
-    @JsonProperty("type")
-    public void setType(TumorSpecimenCoding value) { this.type = value; }
 }

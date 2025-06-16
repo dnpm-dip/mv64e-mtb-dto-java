@@ -1,7 +1,9 @@
 package dev.pcvolkmer.mv64e.mtb;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.io.IOException;
-import com.fasterxml.jackson.annotation.*;
 
 public enum ProteinExpressionTcScoreCodingCode {
     CODE_0, CODE_1, CODE_2, CODE_3, CODE_4, CODE_5, CODE_6;

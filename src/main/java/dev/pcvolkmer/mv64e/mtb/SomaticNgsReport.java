@@ -1,52 +1,36 @@
 package dev.pcvolkmer.mv64e.mtb;
 
-import com.fasterxml.jackson.annotation.*;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.*;
+
 import java.util.Date;
 import java.util.List;
 
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 public class SomaticNgsReport {
+    @Getter(onMethod_ = {@JsonProperty("id")})
+    @Setter(onMethod_ = {@JsonProperty("id")})
     private String id;
+    @Getter(onMethod_ = {@JsonProperty("issuedOn"), @JsonFormat(pattern = "yyyy-MM-dd")})
+    @Setter(onMethod_ = {@JsonProperty("issuedOn"), @JsonFormat(pattern = "yyyy-MM-dd")})
     private Date issuedOn;
+    @Getter(onMethod_ = {@JsonProperty("metadata")})
+    @Setter(onMethod_ = {@JsonProperty("metadata")})
     private List<NgsReportMetadata> metadata;
+    @Getter(onMethod_ = {@JsonProperty("patient")})
+    @Setter(onMethod_ = {@JsonProperty("patient")})
     private Reference patient;
+    @Getter(onMethod_ = {@JsonProperty("results")})
+    @Setter(onMethod_ = {@JsonProperty("results")})
     private NgsReportResults results;
+    @Getter(onMethod_ = {@JsonProperty("specimen")})
+    @Setter(onMethod_ = {@JsonProperty("specimen")})
     private Reference specimen;
+    @Getter(onMethod_ = {@JsonProperty("type")})
+    @Setter(onMethod_ = {@JsonProperty("type")})
     private NgsReportCoding type;
-
-    @JsonProperty("id")
-    public String getId() { return id; }
-    @JsonProperty("id")
-    public void setId(String value) { this.id = value; }
-
-    @JsonProperty("issuedOn")
-    @JsonFormat(pattern = "yyyy-MM-dd")
-    public Date getIssuedOn() { return issuedOn; }
-    @JsonProperty("issuedOn")
-    @JsonFormat(pattern = "yyyy-MM-dd")
-    public void setIssuedOn(Date value) { this.issuedOn = value; }
-
-    @JsonProperty("metadata")
-    public List<NgsReportMetadata> getMetadata() { return metadata; }
-    @JsonProperty("metadata")
-    public void setMetadata(List<NgsReportMetadata> value) { this.metadata = value; }
-
-    @JsonProperty("patient")
-    public Reference getPatient() { return patient; }
-    @JsonProperty("patient")
-    public void setPatient(Reference value) { this.patient = value; }
-
-    @JsonProperty("results")
-    public NgsReportResults getResults() { return results; }
-    @JsonProperty("results")
-    public void setResults(NgsReportResults value) { this.results = value; }
-
-    @JsonProperty("specimen")
-    public Reference getSpecimen() { return specimen; }
-    @JsonProperty("specimen")
-    public void setSpecimen(Reference value) { this.specimen = value; }
-
-    @JsonProperty("type")
-    public NgsReportCoding getType() { return type; }
-    @JsonProperty("type")
-    public void setType(NgsReportCoding value) { this.type = value; }
 }

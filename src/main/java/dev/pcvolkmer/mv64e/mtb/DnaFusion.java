@@ -1,49 +1,34 @@
 package dev.pcvolkmer.mv64e.mtb;
 
-import com.fasterxml.jackson.annotation.*;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.*;
+
 import java.util.List;
 
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 public class DnaFusion {
+    @Getter(onMethod_ = {@JsonProperty("externalIds")})
+    @Setter(onMethod_ = {@JsonProperty("externalIds")})
     private List<VariantExternalId> externalIds;
+    @Getter(onMethod_ = {@JsonProperty("fusionPartner3prime")})
+    @Setter(onMethod_ = {@JsonProperty("fusionPartner3prime")})
     private DnaFusionFusionPartner3Prime fusionPartner3Prime;
+    @Getter(onMethod_ = {@JsonProperty("fusionPartner5prime")})
+    @Setter(onMethod_ = {@JsonProperty("fusionPartner5prime")})
     private DnaFusionFusionPartner5Prime fusionPartner5Prime;
+    @Getter(onMethod_ = {@JsonProperty("id")})
+    @Setter(onMethod_ = {@JsonProperty("id")})
     private String id;
+    @Getter(onMethod_ = {@JsonProperty("localization")})
+    @Setter(onMethod_ = {@JsonProperty("localization")})
     private List<BaseVariantLocalizationCoding> localization;
+    @Getter(onMethod_ = {@JsonProperty("patient")})
+    @Setter(onMethod_ = {@JsonProperty("patient")})
     private Reference patient;
+    @Getter(onMethod_ = {@JsonProperty("reportedNumReads")})
+    @Setter(onMethod_ = {@JsonProperty("reportedNumReads")})
     private long reportedNumReads;
-
-    @JsonProperty("externalIds")
-    public List<VariantExternalId> getExternalIds() { return externalIds; }
-    @JsonProperty("externalIds")
-    public void setExternalIds(List<VariantExternalId> value) { this.externalIds = value; }
-
-    @JsonProperty("fusionPartner3prime")
-    public DnaFusionFusionPartner3Prime getFusionPartner3Prime() { return fusionPartner3Prime; }
-    @JsonProperty("fusionPartner3prime")
-    public void setFusionPartner3Prime(DnaFusionFusionPartner3Prime value) { this.fusionPartner3Prime = value; }
-
-    @JsonProperty("fusionPartner5prime")
-    public DnaFusionFusionPartner5Prime getFusionPartner5Prime() { return fusionPartner5Prime; }
-    @JsonProperty("fusionPartner5prime")
-    public void setFusionPartner5Prime(DnaFusionFusionPartner5Prime value) { this.fusionPartner5Prime = value; }
-
-    @JsonProperty("id")
-    public String getId() { return id; }
-    @JsonProperty("id")
-    public void setId(String value) { this.id = value; }
-
-    @JsonProperty("localization")
-    public List<BaseVariantLocalizationCoding> getLocalization() { return localization; }
-    @JsonProperty("localization")
-    public void setLocalization(List<BaseVariantLocalizationCoding> value) { this.localization = value; }
-
-    @JsonProperty("patient")
-    public Reference getPatient() { return patient; }
-    @JsonProperty("patient")
-    public void setPatient(Reference value) { this.patient = value; }
-
-    @JsonProperty("reportedNumReads")
-    public long getReportedNumReads() { return reportedNumReads; }
-    @JsonProperty("reportedNumReads")
-    public void setReportedNumReads(long value) { this.reportedNumReads = value; }
 }

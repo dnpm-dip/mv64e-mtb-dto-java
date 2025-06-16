@@ -1,19 +1,19 @@
 package dev.pcvolkmer.mv64e.mtb;
 
-import com.fasterxml.jackson.annotation.*;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.*;
+
 import java.util.List;
 
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 public class IhcReportResults {
+    @Getter(onMethod_ = {@JsonProperty("msiMmr")})
+    @Setter(onMethod_ = {@JsonProperty("msiMmr")})
     private List<MSIMmr> msiMmr;
+    @Getter(onMethod_ = {@JsonProperty("proteinExpression")})
+    @Setter(onMethod_ = {@JsonProperty("proteinExpression")})
     private List<ProteinExpression> proteinExpression;
-
-    @JsonProperty("msiMmr")
-    public List<MSIMmr> getMsiMmr() { return msiMmr; }
-    @JsonProperty("msiMmr")
-    public void setMsiMmr(List<MSIMmr> value) { this.msiMmr = value; }
-
-    @JsonProperty("proteinExpression")
-    public List<ProteinExpression> getProteinExpression() { return proteinExpression; }
-    @JsonProperty("proteinExpression")
-    public void setProteinExpression(List<ProteinExpression> value) { this.proteinExpression = value; }
 }

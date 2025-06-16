@@ -1,26 +1,23 @@
 package dev.pcvolkmer.mv64e.mtb;
 
-import com.fasterxml.jackson.annotation.*;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.*;
+
 import java.util.Date;
 import java.util.List;
 
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 public class ModelProjectConsent {
+    @Getter(onMethod_ = {@JsonProperty("date")})
+    @Setter(onMethod_ = {@JsonProperty("date")})
     private Date date;
+    @Getter(onMethod_ = {@JsonProperty("provisions")})
+    @Setter(onMethod_ = {@JsonProperty("provisions")})
     private List<Provision> provisions;
+    @Getter(onMethod_ = {@JsonProperty("version")})
+    @Setter(onMethod_ = {@JsonProperty("version")})
     private String version;
-
-    @JsonProperty("date")
-    public Date getDate() { return date; }
-    @JsonProperty("date")
-    public void setDate(Date value) { this.date = value; }
-
-    @JsonProperty("provisions")
-    public List<Provision> getProvisions() { return provisions; }
-    @JsonProperty("provisions")
-    public void setProvisions(List<Provision> value) { this.provisions = value; }
-
-    @JsonProperty("version")
-    public String getVersion() { return version; }
-    @JsonProperty("version")
-    public void setVersion(String value) { this.version = value; }
 }

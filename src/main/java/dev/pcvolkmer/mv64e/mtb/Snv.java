@@ -1,103 +1,61 @@
 package dev.pcvolkmer.mv64e.mtb;
 
-import com.fasterxml.jackson.annotation.*;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.*;
+
 import java.util.List;
 
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 public class Snv {
+    @Getter(onMethod_ = {@JsonProperty("allelicFrequency")})
+    @Setter(onMethod_ = {@JsonProperty("allelicFrequency")})
     private double allelicFrequency;
+    @Getter(onMethod_ = {@JsonProperty("altAllele")})
+    @Setter(onMethod_ = {@JsonProperty("altAllele")})
     private String altAllele;
+    @Getter(onMethod_ = {@JsonProperty("chromosome")})
+    @Setter(onMethod_ = {@JsonProperty("chromosome")})
     private Chromosome chromosome;
+    @Getter(onMethod_ = {@JsonProperty("dnaChange")})
+    @Setter(onMethod_ = {@JsonProperty("dnaChange")})
     private String dnaChange;
+    @Getter(onMethod_ = {@JsonProperty("exonId")})
+    @Setter(onMethod_ = {@JsonProperty("exonId")})
     private String exonId;
+    @Getter(onMethod_ = {@JsonProperty("externalIds")})
+    @Setter(onMethod_ = {@JsonProperty("externalIds")})
     private List<VariantExternalId> externalIds;
+    @Getter(onMethod_ = {@JsonProperty("gene")})
+    @Setter(onMethod_ = {@JsonProperty("gene")})
     private Coding gene;
+    @Getter(onMethod_ = {@JsonProperty("id")})
+    @Setter(onMethod_ = {@JsonProperty("id")})
     private String id;
+    @Getter(onMethod_ = {@JsonProperty("interpretation")})
+    @Setter(onMethod_ = {@JsonProperty("interpretation")})
     private ClinVarCoding interpretation;
+    @Getter(onMethod_ = {@JsonProperty("localization")})
+    @Setter(onMethod_ = {@JsonProperty("localization")})
     private List<BaseVariantLocalizationCoding> localization;
+    @Getter(onMethod_ = {@JsonProperty("patient")})
+    @Setter(onMethod_ = {@JsonProperty("patient")})
     private Reference patient;
+    @Getter(onMethod_ = {@JsonProperty("position")})
+    @Setter(onMethod_ = {@JsonProperty("position")})
     private Position position;
+    @Getter(onMethod_ = {@JsonProperty("proteinChange")})
+    @Setter(onMethod_ = {@JsonProperty("proteinChange")})
     private String proteinChange;
+    @Getter(onMethod_ = {@JsonProperty("readDepth")})
+    @Setter(onMethod_ = {@JsonProperty("readDepth")})
     private long readDepth;
+    @Getter(onMethod_ = {@JsonProperty("refAllele")})
+    @Setter(onMethod_ = {@JsonProperty("refAllele")})
     private String refAllele;
+    @Getter(onMethod_ = {@JsonProperty("transcriptId")})
+    @Setter(onMethod_ = {@JsonProperty("transcriptId")})
     private TranscriptId transcriptId;
-
-    @JsonProperty("allelicFrequency")
-    public double getAllelicFrequency() { return allelicFrequency; }
-    @JsonProperty("allelicFrequency")
-    public void setAllelicFrequency(double value) { this.allelicFrequency = value; }
-
-    @JsonProperty("altAllele")
-    public String getAltAllele() { return altAllele; }
-    @JsonProperty("altAllele")
-    public void setAltAllele(String value) { this.altAllele = value; }
-
-    @JsonProperty("chromosome")
-    public Chromosome getChromosome() { return chromosome; }
-    @JsonProperty("chromosome")
-    public void setChromosome(Chromosome value) { this.chromosome = value; }
-
-    @JsonProperty("dnaChange")
-    public String getDnaChange() { return dnaChange; }
-    @JsonProperty("dnaChange")
-    public void setDnaChange(String value) { this.dnaChange = value; }
-
-    @JsonProperty("exonId")
-    public String getExonId() { return exonId; }
-    @JsonProperty("exonId")
-    public void setExonId(String value) { this.exonId = value; }
-
-    @JsonProperty("externalIds")
-    public List<VariantExternalId> getExternalIds() { return externalIds; }
-    @JsonProperty("externalIds")
-    public void setExternalIds(List<VariantExternalId> value) { this.externalIds = value; }
-
-    @JsonProperty("gene")
-    public Coding getGene() { return gene; }
-    @JsonProperty("gene")
-    public void setGene(Coding value) { this.gene = value; }
-
-    @JsonProperty("id")
-    public String getId() { return id; }
-    @JsonProperty("id")
-    public void setId(String value) { this.id = value; }
-
-    @JsonProperty("interpretation")
-    public ClinVarCoding getInterpretation() { return interpretation; }
-    @JsonProperty("interpretation")
-    public void setInterpretation(ClinVarCoding value) { this.interpretation = value; }
-
-    @JsonProperty("localization")
-    public List<BaseVariantLocalizationCoding> getLocalization() { return localization; }
-    @JsonProperty("localization")
-    public void setLocalization(List<BaseVariantLocalizationCoding> value) { this.localization = value; }
-
-    @JsonProperty("patient")
-    public Reference getPatient() { return patient; }
-    @JsonProperty("patient")
-    public void setPatient(Reference value) { this.patient = value; }
-
-    @JsonProperty("position")
-    public Position getPosition() { return position; }
-    @JsonProperty("position")
-    public void setPosition(Position value) { this.position = value; }
-
-    @JsonProperty("proteinChange")
-    public String getProteinChange() { return proteinChange; }
-    @JsonProperty("proteinChange")
-    public void setProteinChange(String value) { this.proteinChange = value; }
-
-    @JsonProperty("readDepth")
-    public long getReadDepth() { return readDepth; }
-    @JsonProperty("readDepth")
-    public void setReadDepth(long value) { this.readDepth = value; }
-
-    @JsonProperty("refAllele")
-    public String getRefAllele() { return refAllele; }
-    @JsonProperty("refAllele")
-    public void setRefAllele(String value) { this.refAllele = value; }
-
-    @JsonProperty("transcriptId")
-    public TranscriptId getTranscriptId() { return transcriptId; }
-    @JsonProperty("transcriptId")
-    public void setTranscriptId(TranscriptId value) { this.transcriptId = value; }
 }

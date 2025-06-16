@@ -1,33 +1,26 @@
 package dev.pcvolkmer.mv64e.mtb;
 
-import com.fasterxml.jackson.annotation.*;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.*;
+
 import java.util.Date;
 
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 public class GeneticCounselingRecommendation {
+    @Getter(onMethod_ = {@JsonProperty("id")})
+    @Setter(onMethod_ = {@JsonProperty("id")})
     private String id;
+    @Getter(onMethod_ = {@JsonProperty("issuedOn"), @JsonFormat(pattern = "yyyy-MM-dd")})
+    @Setter(onMethod_ = {@JsonProperty("issuedOn"), @JsonFormat(pattern = "yyyy-MM-dd")})
     private Date issuedOn;
+    @Getter(onMethod_ = {@JsonProperty("patient")})
+    @Setter(onMethod_ = {@JsonProperty("patient")})
     private Reference patient;
+    @Getter(onMethod_ = {@JsonProperty("reason")})
+    @Setter(onMethod_ = {@JsonProperty("reason")})
     private GeneticCounselingRecommendationReasonCoding reason;
-
-    @JsonProperty("id")
-    public String getId() { return id; }
-    @JsonProperty("id")
-    public void setId(String value) { this.id = value; }
-
-    @JsonProperty("issuedOn")
-    @JsonFormat(pattern = "yyyy-MM-dd")
-    public Date getIssuedOn() { return issuedOn; }
-    @JsonProperty("issuedOn")
-    @JsonFormat(pattern = "yyyy-MM-dd")
-    public void setIssuedOn(Date value) { this.issuedOn = value; }
-
-    @JsonProperty("patient")
-    public Reference getPatient() { return patient; }
-    @JsonProperty("patient")
-    public void setPatient(Reference value) { this.patient = value; }
-
-    @JsonProperty("reason")
-    public GeneticCounselingRecommendationReasonCoding getReason() { return reason; }
-    @JsonProperty("reason")
-    public void setReason(GeneticCounselingRecommendationReasonCoding value) { this.reason = value; }
 }

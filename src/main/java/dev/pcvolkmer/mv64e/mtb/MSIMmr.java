@@ -1,48 +1,32 @@
 package dev.pcvolkmer.mv64e.mtb;
 
-import com.fasterxml.jackson.annotation.*;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.*;
 
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 public class MSIMmr {
+    @Getter(onMethod_ = {@JsonProperty("icScore")})
+    @Setter(onMethod_ = {@JsonProperty("icScore")})
     private ProteinExpressionIcScoreCoding icScore;
+    @Getter(onMethod_ = {@JsonProperty("id")})
+    @Setter(onMethod_ = {@JsonProperty("id")})
     private String id;
+    @Getter(onMethod_ = {@JsonProperty("patient")})
+    @Setter(onMethod_ = {@JsonProperty("patient")})
     private Reference patient;
+    @Getter(onMethod_ = {@JsonProperty("protein")})
+    @Setter(onMethod_ = {@JsonProperty("protein")})
     private Coding protein;
+    @Getter(onMethod_ = {@JsonProperty("tcScore")})
+    @Setter(onMethod_ = {@JsonProperty("tcScore")})
     private ProteinExpressionTcScoreCoding tcScore;
+    @Getter(onMethod_ = {@JsonProperty("tpsScore")})
+    @Setter(onMethod_ = {@JsonProperty("tpsScore")})
     private Long tpsScore;
+    @Getter(onMethod_ = {@JsonProperty("value")})
+    @Setter(onMethod_ = {@JsonProperty("value")})
     private ProteinExpressionResultCoding value;
-
-    @JsonProperty("icScore")
-    public ProteinExpressionIcScoreCoding getIcScore() { return icScore; }
-    @JsonProperty("icScore")
-    public void setIcScore(ProteinExpressionIcScoreCoding value) { this.icScore = value; }
-
-    @JsonProperty("id")
-    public String getId() { return id; }
-    @JsonProperty("id")
-    public void setId(String value) { this.id = value; }
-
-    @JsonProperty("patient")
-    public Reference getPatient() { return patient; }
-    @JsonProperty("patient")
-    public void setPatient(Reference value) { this.patient = value; }
-
-    @JsonProperty("protein")
-    public Coding getProtein() { return protein; }
-    @JsonProperty("protein")
-    public void setProtein(Coding value) { this.protein = value; }
-
-    @JsonProperty("tcScore")
-    public ProteinExpressionTcScoreCoding getTcScore() { return tcScore; }
-    @JsonProperty("tcScore")
-    public void setTcScore(ProteinExpressionTcScoreCoding value) { this.tcScore = value; }
-
-    @JsonProperty("tpsScore")
-    public Long getTpsScore() { return tpsScore; }
-    @JsonProperty("tpsScore")
-    public void setTpsScore(Long value) { this.tpsScore = value; }
-
-    @JsonProperty("value")
-    public ProteinExpressionResultCoding getValue() { return value; }
-    @JsonProperty("value")
-    public void setValue(ProteinExpressionResultCoding value) { this.value = value; }
 }

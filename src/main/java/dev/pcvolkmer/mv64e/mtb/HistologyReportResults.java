@@ -1,18 +1,17 @@
 package dev.pcvolkmer.mv64e.mtb;
 
-import com.fasterxml.jackson.annotation.*;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.*;
 
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 public class HistologyReportResults {
+    @Getter(onMethod_ = {@JsonProperty("tumorCellContent")})
+    @Setter(onMethod_ = {@JsonProperty("tumorCellContent")})
     private TumorCellContent tumorCellContent;
+    @Getter(onMethod_ = {@JsonProperty("tumorMorphology")})
+    @Setter(onMethod_ = {@JsonProperty("tumorMorphology")})
     private TumorMorphology tumorMorphology;
-
-    @JsonProperty("tumorCellContent")
-    public TumorCellContent getTumorCellContent() { return tumorCellContent; }
-    @JsonProperty("tumorCellContent")
-    public void setTumorCellContent(TumorCellContent value) { this.tumorCellContent = value; }
-
-    @JsonProperty("tumorMorphology")
-    public TumorMorphology getTumorMorphology() { return tumorMorphology; }
-    @JsonProperty("tumorMorphology")
-    public void setTumorMorphology(TumorMorphology value) { this.tumorMorphology = value; }
 }

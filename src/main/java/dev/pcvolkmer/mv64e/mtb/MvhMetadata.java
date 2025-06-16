@@ -1,32 +1,26 @@
 package dev.pcvolkmer.mv64e.mtb;
 
-import com.fasterxml.jackson.annotation.*;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.*;
+
 import java.util.List;
 import java.util.Map;
 
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 public class MvhMetadata {
+    @Getter(onMethod_ = {@JsonProperty("modelProjectConsent")})
+    @Setter(onMethod_ = {@JsonProperty("modelProjectConsent")})
     private ModelProjectConsent modelProjectConsent;
+    @Getter(onMethod_ = {@JsonProperty("researchConsents")})
+    @Setter(onMethod_ = {@JsonProperty("researchConsents")})
     private List<Map<String, Object>> researchConsents;
+    @Getter(onMethod_ = {@JsonProperty("transferTAN")})
+    @Setter(onMethod_ = {@JsonProperty("transferTAN")})
     private String transferTan;
+    @Getter(onMethod_ = {@JsonProperty("type")})
+    @Setter(onMethod_ = {@JsonProperty("type")})
     private MvhSubmissionType type;
-
-    @JsonProperty("modelProjectConsent")
-    public ModelProjectConsent getModelProjectConsent() { return modelProjectConsent; }
-    @JsonProperty("modelProjectConsent")
-    public void setModelProjectConsent(ModelProjectConsent value) { this.modelProjectConsent = value; }
-
-    @JsonProperty("researchConsents")
-    public List<Map<String, Object>> getResearchConsents() { return researchConsents; }
-    @JsonProperty("researchConsents")
-    public void setResearchConsents(List<Map<String, Object>> value) { this.researchConsents = value; }
-
-    @JsonProperty("transferTAN")
-    public String getTransferTan() { return transferTan; }
-    @JsonProperty("transferTAN")
-    public void setTransferTan(String value) { this.transferTan = value; }
-
-    @JsonProperty("type")
-    public MvhSubmissionType getType() { return type; }
-    @JsonProperty("type")
-    public void setType(MvhSubmissionType value) { this.type = value; }
 }

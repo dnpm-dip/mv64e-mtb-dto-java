@@ -1,45 +1,32 @@
 package dev.pcvolkmer.mv64e.mtb;
 
-import com.fasterxml.jackson.annotation.*;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.*;
+
 import java.util.Date;
 
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 public class ClaimResponse {
+    @Getter(onMethod_ = {@JsonProperty("claim")})
+    @Setter(onMethod_ = {@JsonProperty("claim")})
     private Reference claim;
+    @Getter(onMethod_ = {@JsonProperty("id")})
+    @Setter(onMethod_ = {@JsonProperty("id")})
     private String id;
+    @Getter(onMethod_ = {@JsonProperty("issuedOn"), @JsonFormat(pattern = "yyyy-MM-dd")})
+    @Setter(onMethod_ = {@JsonProperty("issuedOn"), @JsonFormat(pattern = "yyyy-MM-dd")})
     private Date issuedOn;
+    @Getter(onMethod_ = {@JsonProperty("patient")})
+    @Setter(onMethod_ = {@JsonProperty("patient")})
     private Reference patient;
+    @Getter(onMethod_ = {@JsonProperty("status")})
+    @Setter(onMethod_ = {@JsonProperty("status")})
     private ClaimResponseStatusCoding status;
+    @Getter(onMethod_ = {@JsonProperty("statusReason")})
+    @Setter(onMethod_ = {@JsonProperty("statusReason")})
     private ClaimResponseStatusReasonCoding statusReason;
-
-    @JsonProperty("claim")
-    public Reference getClaim() { return claim; }
-    @JsonProperty("claim")
-    public void setClaim(Reference value) { this.claim = value; }
-
-    @JsonProperty("id")
-    public String getId() { return id; }
-    @JsonProperty("id")
-    public void setId(String value) { this.id = value; }
-
-    @JsonProperty("issuedOn")
-    @JsonFormat(pattern = "yyyy-MM-dd")
-    public Date getIssuedOn() { return issuedOn; }
-    @JsonProperty("issuedOn")
-    @JsonFormat(pattern = "yyyy-MM-dd")
-    public void setIssuedOn(Date value) { this.issuedOn = value; }
-
-    @JsonProperty("patient")
-    public Reference getPatient() { return patient; }
-    @JsonProperty("patient")
-    public void setPatient(Reference value) { this.patient = value; }
-
-    @JsonProperty("status")
-    public ClaimResponseStatusCoding getStatus() { return status; }
-    @JsonProperty("status")
-    public void setStatus(ClaimResponseStatusCoding value) { this.status = value; }
-
-    @JsonProperty("statusReason")
-    public ClaimResponseStatusReasonCoding getStatusReason() { return statusReason; }
-    @JsonProperty("statusReason")
-    public void setStatusReason(ClaimResponseStatusReasonCoding value) { this.statusReason = value; }
 }

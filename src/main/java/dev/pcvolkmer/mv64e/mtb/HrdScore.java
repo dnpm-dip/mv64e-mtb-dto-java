@@ -1,42 +1,29 @@
 package dev.pcvolkmer.mv64e.mtb;
 
-import com.fasterxml.jackson.annotation.*;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.*;
 
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 public class HrdScore {
+    @Getter(onMethod_ = {@JsonProperty("components")})
+    @Setter(onMethod_ = {@JsonProperty("components")})
     private Components components;
+    @Getter(onMethod_ = {@JsonProperty("id")})
+    @Setter(onMethod_ = {@JsonProperty("id")})
     private String id;
+    @Getter(onMethod_ = {@JsonProperty("interpretation")})
+    @Setter(onMethod_ = {@JsonProperty("interpretation")})
     private HrdScoreInterpretationCoding interpretation;
+    @Getter(onMethod_ = {@JsonProperty("patient")})
+    @Setter(onMethod_ = {@JsonProperty("patient")})
     private Reference patient;
+    @Getter(onMethod_ = {@JsonProperty("specimen")})
+    @Setter(onMethod_ = {@JsonProperty("specimen")})
     private Reference specimen;
+    @Getter(onMethod_ = {@JsonProperty("value")})
+    @Setter(onMethod_ = {@JsonProperty("value")})
     private double value;
-
-    @JsonProperty("components")
-    public Components getComponents() { return components; }
-    @JsonProperty("components")
-    public void setComponents(Components value) { this.components = value; }
-
-    @JsonProperty("id")
-    public String getId() { return id; }
-    @JsonProperty("id")
-    public void setId(String value) { this.id = value; }
-
-    @JsonProperty("interpretation")
-    public HrdScoreInterpretationCoding getInterpretation() { return interpretation; }
-    @JsonProperty("interpretation")
-    public void setInterpretation(HrdScoreInterpretationCoding value) { this.interpretation = value; }
-
-    @JsonProperty("patient")
-    public Reference getPatient() { return patient; }
-    @JsonProperty("patient")
-    public void setPatient(Reference value) { this.patient = value; }
-
-    @JsonProperty("specimen")
-    public Reference getSpecimen() { return specimen; }
-    @JsonProperty("specimen")
-    public void setSpecimen(Reference value) { this.specimen = value; }
-
-    @JsonProperty("value")
-    public double getValue() { return value; }
-    @JsonProperty("value")
-    public void setValue(double value) { this.value = value; }
 }
