@@ -10,8 +10,8 @@ class ConverterTest {
 
     @Test
     void shouldDeserializeJsonString() throws IOException {
-        var ressource = getClass().getClassLoader().getResource("mv64e-mtb-fake-patient.json");
-        assertNotNull(Converter.fromJsonString(new String(ressource.openStream().readAllBytes())));
+        var resource = getClass().getClassLoader().getResource("mv64e-mtb-fake-patient.json");
+        assertNotNull(Converter.fromJsonString(new String(resource.openStream().readAllBytes())));
     }
 
 }
