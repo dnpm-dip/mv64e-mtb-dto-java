@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
 
 import java.util.Date;
+import java.util.List;
 
 @Data
 @AllArgsConstructor
@@ -28,5 +29,5 @@ public class ClaimResponse {
     private ClaimResponseStatusCoding status;
     @Getter(onMethod_ = {@JsonProperty("statusReason")})
     @Setter(onMethod_ = {@JsonProperty("statusReason")})
-    private ClaimResponseStatusReasonCoding statusReason;
+    private List<ClaimResponseStatusReasonCoding> statusReason;
 }
