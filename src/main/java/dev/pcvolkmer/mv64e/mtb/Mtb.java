@@ -25,6 +25,9 @@ public class Mtb {
     @Getter(onMethod_ = {@JsonProperty("episodesOfCare")})
     @Setter(onMethod_ = {@JsonProperty("episodesOfCare")})
     private List<MtbEpisodeOfCare> episodesOfCare;
+    @Getter(onMethod_ = {@JsonProperty("familyMemberHistories")})
+    @Setter(onMethod_ = {@JsonProperty("familyMemberHistories")})
+    private List<FamilyMemberHistory> familyMemberHistories;
     @Getter(onMethod_ = {@JsonProperty("followUps")})
     @Setter(onMethod_ = {@JsonProperty("followUps")})
     private List<FollowUp> followUps;
