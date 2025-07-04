@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.io.IOException;
 
 public enum Chromosome {
-    CHR1, CHR10, CHR11, CHR12, CHR13, CHR14, CHR15, CHR16, CHR17, CHR18, CHR19, CHR2, CHR20, CHR21, CHR22, CHR3, CHR4, CHR5, CHR6, CHR7, CHR8, CHR9, CHR_X, CHR_Y;
+    CHR1, CHR10, CHR11, CHR12, CHR13, CHR14, CHR15, CHR16, CHR17, CHR18, CHR19, CHR2, CHR20, CHR21, CHR22, CHR3, CHR4, CHR5, CHR6, CHR7, CHR8, CHR9, CHR_X, CHR_Y, CHR_MT;
 
     @JsonValue
     public String toValue() {
@@ -35,6 +35,7 @@ public enum Chromosome {
             case CHR9: return "chr9";
             case CHR_X: return "chrX";
             case CHR_Y: return "chrY";
+            case CHR_MT: return "chrMT";
         }
         return null;
     }
@@ -65,6 +66,7 @@ public enum Chromosome {
         if (value.equals("chr9")) return CHR9;
         if (value.equals("chrX")) return CHR_X;
         if (value.equals("chrY")) return CHR_Y;
+        if (value.equals("chrMT")) return CHR_MT;
         throw new IOException("Cannot deserialize Chromosome");
     }
 }
