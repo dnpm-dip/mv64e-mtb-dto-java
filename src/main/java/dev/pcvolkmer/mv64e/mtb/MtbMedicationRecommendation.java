@@ -14,7 +14,7 @@ import java.util.List;
 public class MtbMedicationRecommendation {
     @Getter(onMethod_ = {@JsonProperty("category")})
     @Setter(onMethod_ = {@JsonProperty("category")})
-    private MtbMedicationRecommendationCategoryCoding category;
+    private List<MtbMedicationRecommendationCategoryCoding> category;
     @Getter(onMethod_ = {@JsonProperty("id")})
     @Setter(onMethod_ = {@JsonProperty("id")})
     private String id;
