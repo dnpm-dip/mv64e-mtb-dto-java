@@ -11,8 +11,8 @@ import java.util.Date;
 @NoArgsConstructor
 @Builder
 public class PeriodDate {
-    @Getter(onMethod_ = {@JsonProperty("end")})
-    @Setter(onMethod_ = {@JsonProperty("end")})
+    @Getter(onMethod_ = {@JsonProperty("end"), @JsonFormat(pattern = "yyyy-MM-dd")})
+    @Setter(onMethod_ = {@JsonProperty("end"), @JsonFormat(pattern = "yyyy-MM-dd")})
     private Date end;
     @Getter(onMethod_ = {@JsonProperty("start"), @JsonFormat(pattern = "yyyy-MM-dd")})
     @Setter(onMethod_ = {@JsonProperty("start"), @JsonFormat(pattern = "yyyy-MM-dd")})

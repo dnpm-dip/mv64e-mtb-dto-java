@@ -20,8 +20,8 @@ public class Patient {
     @Getter(onMethod_ = {@JsonProperty("birthDate"), @JsonFormat(pattern = "yyyy-MM-dd")})
     @Setter(onMethod_ = {@JsonProperty("birthDate"), @JsonFormat(pattern = "yyyy-MM-dd")})
     private Date birthDate;
-    @Getter(onMethod_ = {@JsonProperty("dateOfDeath")})
-    @Setter(onMethod_ = {@JsonProperty("dateOfDeath")})
+    @Getter(onMethod_ = {@JsonProperty("dateOfDeath"), @JsonFormat(pattern = "yyyy-MM-dd")})
+    @Setter(onMethod_ = {@JsonProperty("dateOfDeath"), @JsonFormat(pattern = "yyyy-MM-dd")})
     private Date dateOfDeath;
     @Getter(onMethod_ = {@JsonProperty("gender")})
     @Setter(onMethod_ = {@JsonProperty("gender")})
