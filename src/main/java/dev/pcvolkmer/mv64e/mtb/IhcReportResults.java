@@ -12,7 +12,7 @@ import java.util.List;
 public class IhcReportResults {
     @Getter(onMethod_ = {@JsonProperty("msiMmr")})
     @Setter(onMethod_ = {@JsonProperty("msiMmr")})
-    private List<MSIMmr> msiMmr;
+    private List<MsiMmr> msiMmr;
     @Getter(onMethod_ = {@JsonProperty("proteinExpression")})
     @Setter(onMethod_ = {@JsonProperty("proteinExpression")})
     private List<ProteinExpression> proteinExpression;

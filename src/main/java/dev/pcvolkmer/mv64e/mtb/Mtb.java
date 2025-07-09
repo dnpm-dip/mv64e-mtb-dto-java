@@ -49,6 +49,9 @@ public class Mtb {
     @Getter(onMethod_ = {@JsonProperty("ngsReports")})
     @Setter(onMethod_ = {@JsonProperty("ngsReports")})
     private List<SomaticNgsReport> ngsReports;
+    @Getter(onMethod_ = {@JsonProperty("msiFindings")})
+    @Setter(onMethod_ = {@JsonProperty("msiFindings")})
+    private List<Msi> msiFindings;
     @Getter(onMethod_ = {@JsonProperty("patient")})
     @Setter(onMethod_ = {@JsonProperty("patient")})
     private Patient patient;

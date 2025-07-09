@@ -7,7 +7,7 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class MSIMmr {
+public class MsiMmr {
     @Getter(onMethod_ = {@JsonProperty("icScore")})
     @Setter(onMethod_ = {@JsonProperty("icScore")})
     private ProteinExpressionIcScoreCoding icScore;
