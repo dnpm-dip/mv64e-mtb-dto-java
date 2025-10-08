@@ -26,6 +26,9 @@ public class ProteinExpression {
     @Getter(onMethod_ = {@JsonProperty("tpsScore")})
     @Setter(onMethod_ = {@JsonProperty("tpsScore")})
     private Long tpsScore;
+    @Getter(onMethod_ = {@JsonProperty("cpsScore")})
+    @Setter(onMethod_ = {@JsonProperty("cpsScore")})
+    private Long cpsScore;
     @Getter(onMethod_ = {@JsonProperty("value")})
     @Setter(onMethod_ = {@JsonProperty("value")})
     private ProteinExpressionResultCoding value;
