@@ -9,6 +9,7 @@ import com.fasterxml.jackson.databind.module.SimpleModule;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.TimeZone;
 
 public class Converter {
     // Date-time helpers
@@ -93,6 +94,7 @@ public class Converter {
             }
         });
         mapper.registerModule(module);
+        mapper.setTimeZone(TimeZone.getDefault());
         reader = mapper.readerFor(Mtb.class);
         writer = mapper.writerFor(Mtb.class);
     }
