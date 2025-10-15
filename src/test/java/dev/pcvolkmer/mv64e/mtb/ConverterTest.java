@@ -3,6 +3,7 @@ package dev.pcvolkmer.mv64e.mtb;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
+import java.util.regex.Pattern;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
@@ -16,11 +17,18 @@ class ConverterTest {
     }
 
     @Test
-    void shouldKeepTimezoneUsing() throws IOException {
+    void shouldKeepTimezoneAndDate() throws IOException {
         var resource = getClass().getClassLoader().getResource("mv64e-mtb-fake-patient.json");
-        var mtb = Converter.fromJsonString(new String(resource.openStream().readAllBytes()));
+        var json = new String(resource.openStream().readAllBytes());
+        var mtb = Converter.fromJsonString(json);
+
+        final var pattern = Pattern.compile("\"birthDate\":\"\\d{4}-\\d{2}-\\d{2}\"");
+        final var matcher = pattern.matcher(json);
+        assertThat(matcher.find()).isTrue();
+        final var expectedDate = matcher.toMatchResult().group();
+
         var actual = Converter.toJsonString(mtb);
-        assertThat(actual).contains("\"birthDate\":\"1985-05-19\"");
+        assertThat(actual).contains(expectedDate);
     }
 
 }
