@@ -17,6 +17,9 @@ public class MvhMetadata {
     @Getter(onMethod_ = {@JsonProperty("researchConsents")})
     @Setter(onMethod_ = {@JsonProperty("researchConsents")})
     private List<Map<String, Object>> researchConsents;
+    @Getter(onMethod_ = {@JsonProperty("reasonResearchConsentMissing")})
+    @Setter(onMethod_ = {@JsonProperty("reasonResearchConsentMissing")})
+    private ResearchConsentReasonMissing reasonResearchConsentMissing;
     @Getter(onMethod_ = {@JsonProperty("transferTAN")})
     @Setter(onMethod_ = {@JsonProperty("transferTAN")})
     private String transferTan;
