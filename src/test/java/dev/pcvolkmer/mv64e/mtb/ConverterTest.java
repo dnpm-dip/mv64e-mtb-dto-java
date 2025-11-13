@@ -1,8 +1,10 @@
 package dev.pcvolkmer.mv64e.mtb;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
+import java.util.List;
 import java.util.regex.Pattern;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -46,6 +48,44 @@ class ConverterTest {
         var actual = Converter.toJsonString(mtb);
         // Expect new format
         assertThat(actual).contains("\"birthDate\":\"2025-03\"");
+    }
+
+    @Test
+    void shouldSerializeWithJsonNodeResearchConsentInserted() throws IOException {
+        var mtbResource = getClass().getClassLoader().getResource("mv64e-mtb-fake-patient.json");
+        var mtb = Converter.fromJsonString(new String(mtbResource.openStream().readAllBytes()));
+
+        // Load Research Consent as JsonNode
+        ObjectMapper objectMapper = new ObjectMapper();
+        var bcResource = getClass().getClassLoader().getResource("fake_broadConsent_mii_response_permit.json");
+        var jsonNode = objectMapper.readTree(new String(bcResource.openStream().readAllBytes()));
+
+        // Add Research Consent into Metadata
+        var researchConsent = MvhMetadata.ResearchConsent.from(jsonNode);
+        var metadata = new MvhMetadata();
+        metadata.setResearchConsents(List.of(researchConsent));
+        mtb.setMetadata(metadata);
+
+        // Check conversion to JSON String
+        var actualMtb = Converter.toJsonString(mtb);
+        assertThat(actualMtb).contains(
+                "\"lastUpdated\":\"2025-08-15T11:13:59.143+02:00\"",
+                "http://localhost:8080/ttp-fhir/fhir/gics/Consent/7d3456c2-79b1-11f0-ab27-6ed0ed82d0fd",
+                "https://ths-greifswald.de/fhir/CodeSystem/gics/Policy/MII"
+        );
+    }
+
+    @Test
+    void shouldConvertResearchConsentToJsonNode() throws IOException {
+        // Load Research Consent as JsonNode
+        ObjectMapper objectMapper = new ObjectMapper();
+        var bcResource = getClass().getClassLoader().getResource("fake_broadConsent_mii_response_permit.json");
+        var jsonNode = objectMapper.readTree(new String(bcResource.openStream().readAllBytes()));
+        var researchConsent = MvhMetadata.ResearchConsent.from(jsonNode);
+
+        // Check Conversion keeps all elements
+        var actualRc = researchConsent.asJsonNode();
+        assertThat(actualRc).hasSize(4);
     }
 
 }
