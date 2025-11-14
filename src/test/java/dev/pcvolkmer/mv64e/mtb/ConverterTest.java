@@ -1,6 +1,7 @@
 package dev.pcvolkmer.mv64e.mtb;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.node.ObjectNode;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
@@ -58,10 +59,10 @@ class ConverterTest {
         // Load Research Consent as JsonNode
         ObjectMapper objectMapper = new ObjectMapper();
         var bcResource = getClass().getClassLoader().getResource("fake_broadConsent_mii_response_permit.json");
-        var jsonNode = objectMapper.readTree(new String(bcResource.openStream().readAllBytes()));
+        var jsonObject = objectMapper.readValue(new String(bcResource.openStream().readAllBytes()), ObjectNode.class);
 
         // Add Research Consent into Metadata
-        var researchConsent = MvhMetadata.ResearchConsent.from(jsonNode);
+        var researchConsent = MvhMetadata.ResearchConsent.from(jsonObject);
         var metadata = new MvhMetadata();
         metadata.setResearchConsents(List.of(researchConsent));
         mtb.setMetadata(metadata);
@@ -80,11 +81,11 @@ class ConverterTest {
         // Load Research Consent as JsonNode
         ObjectMapper objectMapper = new ObjectMapper();
         var bcResource = getClass().getClassLoader().getResource("fake_broadConsent_mii_response_permit.json");
-        var jsonNode = objectMapper.readTree(new String(bcResource.openStream().readAllBytes()));
-        var researchConsent = MvhMetadata.ResearchConsent.from(jsonNode);
+        var jsonObject = objectMapper.readValue(new String(bcResource.openStream().readAllBytes()), ObjectNode.class);
+        var researchConsent = MvhMetadata.ResearchConsent.from(jsonObject);
 
         // Check Conversion keeps all elements
-        var actualRc = researchConsent.asJsonNode();
+        var actualRc = researchConsent.asObjectNode();
         assertThat(actualRc).hasSize(4);
     }
 
