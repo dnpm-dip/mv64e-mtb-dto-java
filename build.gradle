@@ -5,6 +5,12 @@ plugins {
 group = 'dev.pcvolkmer.mv64e'
 version = '0.1.0-SNAPSHOT'
 
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(11)
+    }
+}
+
 repositories {
     mavenCentral()
 }
