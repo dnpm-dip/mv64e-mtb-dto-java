@@ -14,8 +14,8 @@ public class FollowUp {
     @Getter(onMethod_ = {@JsonProperty("date"), @JsonFormat(pattern = "yyyy-MM-dd")})
     @Setter(onMethod_ = {@JsonProperty("date"), @JsonFormat(pattern = "yyyy-MM-dd")})
     private Date date;
-    @Getter(onMethod_ = {@JsonProperty("lastContactDate")})
-    @Setter(onMethod_ = {@JsonProperty("lastContactDate")})
+    @Getter(onMethod_ = {@JsonProperty("lastContactDate"), @JsonFormat(pattern = "yyyy-MM-dd")})
+    @Setter(onMethod_ = {@JsonProperty("lastContactDate"), @JsonFormat(pattern = "yyyy-MM-dd")})
     private Date lastContactDate;
     @Getter(onMethod_ = {@JsonProperty("patient")})
     @Setter(onMethod_ = {@JsonProperty("patient")})
