@@ -6,21 +6,21 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.io.IOException;
 
 public enum RnaFusionStrand {
-    EMPTY, RNA_FUSION_STRAND;
+    PLUS, MINUS;
 
     @JsonValue
     public String toValue() {
         switch (this) {
-            case EMPTY: return "+";
-            case RNA_FUSION_STRAND: return "-";
+            case PLUS: return "+";
+            case MINUS: return "-";
         }
         return null;
     }
 
     @JsonCreator
     public static RnaFusionStrand forValue(String value) throws IOException {
-        if (value.equals("+")) return EMPTY;
-        if (value.equals("-")) return RNA_FUSION_STRAND;
+        if (value.equals("+")) return PLUS;
+        if (value.equals("-")) return MINUS;
         throw new IOException("Cannot deserialize RnaFusionStrand");
     }
 }
